@@ -34,7 +34,7 @@ public class Cadastro extends javax.swing.JFrame {
         }
     }
 
-    
+ 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -121,7 +121,9 @@ public class Cadastro extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         cadastraUsuario(novoUsuario);
-        Tela_Principal tp = new Tela_Principal();
+        Tela_Login tl = new Tela_Login();
+        tl.setVisible(true);
+        //Tela_Principal tp = new Tela_Principal();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void CampoNomeCadastro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoNomeCadastro1ActionPerformed

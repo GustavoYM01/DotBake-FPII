@@ -7,11 +7,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
+//import objetos.Usuario;
 
 public class Tela_Login extends javax.swing.JFrame {
     
     //MySQL connect = new MySQL(); // FAZ A INSTÂNCIA DO OBJ. MYSQL. DESSA FORMA, É POSSIVEL ACESSAR OS MÉTODOS DA CLASSE MYSQL.
-    //Usuario usuario = new Usuario(); // FAZ A INSTÂNCIA DO OBJ. USUARIO. ASSIM, PODE-SE ACESSAR OS MÉTODOS DA CLASSE USUARIO.
+    //Usuario user = new Usuario(); // FAZ A INSTÂNCIA DO OBJ. USUARIO. ASSIM, PODE-SE ACESSAR OS MÉTODOS DA CLASSE USUARIO.
 
     public Tela_Login() {
         initComponents();
@@ -21,38 +22,35 @@ public class Tela_Login extends javax.swing.JFrame {
         
         //this.connect.conectaBanco();
         
+        
         String test1 = CampoEmailLogin.getText();
         String test2 = CampoSenhaLogin.getText();
         
-//        String test3 = usuario.getEmail();
-//        String tes4 = usuario.getSenha();
-        
         try {
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/dot_bake", "root", "123456");
             
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost3306/dot_bake", "root", "123456");
-
-            Statement stmt = con.createStatement(); 
+            Statement stmt = con.createStatement();
             
-            String SQL = "SELECT email FROM usuarios WHERE email ='" + test1 + "'" + ";";
-            String SQL2 = "SELECT senha FROM usuarios WHERE senha ='" + test2 + "'" + ";";
+            String SQL = "SELECT * FROM usuarios WHERE email = " + "'" + test1 + "'" + 
+                    " AND senha = " + "'" + test2 + "'" + ";";
             
             ResultSet rs = stmt.executeQuery(SQL);
-            ResultSet rs2 = stmt.executeQuery(SQL2);
             
             if(rs.next()) {
-                if(rs2.next()) {
-                    Tela_Principal tp = new Tela_Principal();
-                    tp.setVisible(true);
-                }
+                Tela_Sucesso ts = new Tela_Sucesso();
+                ts.setVisible(true);
             }
             else {
                 Tela_Erro te = new Tela_Erro();
                 te.setVisible(true);
             }
             
+            
         } catch (Exception e) {
             System.out.println("Erro " +  e.getMessage());
             JOptionPane.showMessageDialog(null, "Erro");
+            Tela_Erro te = new Tela_Erro();
+            te.setVisible(true);
         }
     }
 
