@@ -13,6 +13,7 @@ public class Tela_Cadastro extends javax.swing.JFrame {
     private void initComponents() {
 
         CampoEmailCadastro = new javax.swing.JTextField();
+        jButton3 = new javax.swing.JButton();
         CampoNomeCadastro1 = new javax.swing.JTextField();
         CampoSenhaCadastro = new javax.swing.JPasswordField();
         CampoConfirmaSenha = new javax.swing.JPasswordField();
@@ -20,6 +21,7 @@ public class Tela_Cadastro extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -31,6 +33,16 @@ public class Tela_Cadastro extends javax.swing.JFrame {
             }
         });
         getContentPane().add(CampoEmailCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, 470, 40));
+
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telas/correctExitButton-dotbake.png"))); // NOI18N
+        jButton3.setBorder(null);
+        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 10, 80, 50));
 
         CampoNomeCadastro1.setBackground(new java.awt.Color(255, 227, 205));
         CampoNomeCadastro1.setBorder(null);
@@ -123,6 +135,10 @@ public class Tela_Cadastro extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_CampoEmailCadastroActionPerformed
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_jButton3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -165,6 +181,7 @@ public class Tela_Cadastro extends javax.swing.JFrame {
     private javax.swing.JTextField CampoNomeCadastro1;
     private javax.swing.JPasswordField CampoSenhaCadastro;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

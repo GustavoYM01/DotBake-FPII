@@ -1,27 +1,19 @@
 package telas;
 
-import conexao.MySQL;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
-//import objetos.Usuario;
 
 public class Tela_Login extends javax.swing.JFrame {
-    
-    //MySQL connect = new MySQL(); // FAZ A INSTÂNCIA DO OBJ. MYSQL. DESSA FORMA, É POSSIVEL ACESSAR OS MÉTODOS DA CLASSE MYSQL.
-    //Usuario user = new Usuario(); // FAZ A INSTÂNCIA DO OBJ. USUARIO. ASSIM, PODE-SE ACESSAR OS MÉTODOS DA CLASSE USUARIO.
 
     public Tela_Login() {
         initComponents();
     }
     
-    private void iniciaSessao() {
-        
-        //this.connect.conectaBanco();
-        
+    private void iniciaSessao() {        
         
         String test1 = CampoEmailLogin.getText();
         String test2 = CampoSenhaLogin.getText();
@@ -37,15 +29,13 @@ public class Tela_Login extends javax.swing.JFrame {
             ResultSet rs = stmt.executeQuery(SQL);
             
             if(rs.next()) {
-                Tela_Sucesso ts = new Tela_Sucesso();
-                ts.setVisible(true);
+                Tela_Receitas tr = new Tela_Receitas();
+                tr.setVisible(true);
+                this.dispose();
             }
             else {
-                Tela_Erro te = new Tela_Erro();
-                te.setVisible(true);
+                JOptionPane.showMessageDialog(null, "Senha ou email inválido(a)");
             }
-            
-            
         } catch (Exception e) {
             System.out.println("Erro " +  e.getMessage());
             JOptionPane.showMessageDialog(null, "Erro");
@@ -53,22 +43,31 @@ public class Tela_Login extends javax.swing.JFrame {
             te.setVisible(true);
         }
     }
+    
+//    private void test() {
+//        if(jButton1.getModel().isPressed()) {
+//            
+//        }
+//    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         CampoEmailLogin = new javax.swing.JTextField();
+        jButton3 = new javax.swing.JButton();
         CampoSenhaLogin = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setUndecorated(true);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         CampoEmailLogin.setBackground(new java.awt.Color(255, 227, 205));
+        CampoEmailLogin.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         CampoEmailLogin.setBorder(null);
         CampoEmailLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -77,7 +76,18 @@ public class Tela_Login extends javax.swing.JFrame {
         });
         getContentPane().add(CampoEmailLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 320, 470, 40));
 
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telas/correctExitButton-dotbake.png"))); // NOI18N
+        jButton3.setBorder(null);
+        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 10, 80, 50));
+
         CampoSenhaLogin.setBackground(new java.awt.Color(255, 227, 205));
+        CampoSenhaLogin.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         CampoSenhaLogin.setBorder(null);
         CampoSenhaLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -130,6 +140,7 @@ public class Tela_Login extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Cadastro c = new Cadastro();
         c.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -139,6 +150,10 @@ public class Tela_Login extends javax.swing.JFrame {
     private void CampoEmailLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoEmailLoginActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CampoEmailLoginActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -183,6 +198,7 @@ public class Tela_Login extends javax.swing.JFrame {
     private javax.swing.JPasswordField CampoSenhaLogin;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

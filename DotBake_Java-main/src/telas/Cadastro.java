@@ -23,16 +23,27 @@ public class Cadastro extends javax.swing.JFrame {
         
         try {
             this.connect.insertSQL("INSERT INTO usuarios"
-                    + " VALUES (" + "'" + novoUsuario.getNome_Usuario() + "',"
-                    + "'" + novoUsuario.getEmail() + "'," + "'" + novoUsuario.getSenha() + "'" + ");");
+                + " VALUES (" + "'" + novoUsuario.getNome_Usuario() + "',"
+                + "'" + novoUsuario.getEmail() + "'," + "'" + novoUsuario.getSenha() + "'" + ");");
         } catch (Exception e) {
-            System.out.println("Erro ao cadastrar usuário " +  e.getMessage());
+            System.out.println(e.getMessage());
             JOptionPane.showMessageDialog(null, "Erro ao cadastrar cliente");
-        } finally {
+        } 
+        finally {
             this.connect.fechaBanco();
             JOptionPane.showMessageDialog(null, "Cliente cadastrado com sucesso");
         }
     }
+    
+//    private void VerificaCampos() {
+//        String t = CampoNomeCadastro1.getText();
+//        String t2 = CampoEmailCadastro.getText();
+//        String t3 = CampoSenhaCadastro.getText();
+//        if(t.isEmpty() || t2.isEmpty() || t3.isEmpty()) {
+//            Tela_Erro te = new Tela_Erro();
+//            te.setVisible(true);
+//        }
+//    }
 
  
     @SuppressWarnings("unchecked")
@@ -46,13 +57,14 @@ public class Cadastro extends javax.swing.JFrame {
         CampoConfirmaSenha = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         CampoEmailCadastro.setBackground(new java.awt.Color(255, 227, 205));
+        CampoEmailCadastro.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         CampoEmailCadastro.setBorder(null);
         CampoEmailCadastro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -62,6 +74,7 @@ public class Cadastro extends javax.swing.JFrame {
         getContentPane().add(CampoEmailCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, 470, 40));
 
         CampoNomeCadastro1.setBackground(new java.awt.Color(255, 227, 205));
+        CampoNomeCadastro1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         CampoNomeCadastro1.setBorder(null);
         CampoNomeCadastro1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -71,6 +84,7 @@ public class Cadastro extends javax.swing.JFrame {
         getContentPane().add(CampoNomeCadastro1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, 470, 40));
 
         CampoSenhaCadastro.setBackground(new java.awt.Color(255, 227, 205));
+        CampoSenhaCadastro.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         CampoSenhaCadastro.setBorder(null);
         CampoSenhaCadastro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -80,6 +94,7 @@ public class Cadastro extends javax.swing.JFrame {
         getContentPane().add(CampoSenhaCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 330, 470, 40));
 
         CampoConfirmaSenha.setBackground(new java.awt.Color(255, 227, 205));
+        CampoConfirmaSenha.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         CampoConfirmaSenha.setBorder(null);
         CampoConfirmaSenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -105,7 +120,6 @@ public class Cadastro extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/Cadastro.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, -1));
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 100, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -120,10 +134,11 @@ public class Cadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_CampoConfirmaSenhaActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+//        VerificaCampos();
         cadastraUsuario(novoUsuario);
         Tela_Login tl = new Tela_Login();
         tl.setVisible(true);
-        //Tela_Principal tp = new Tela_Principal();
+        this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void CampoNomeCadastro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoNomeCadastro1ActionPerformed
@@ -176,7 +191,6 @@ public class Cadastro extends javax.swing.JFrame {
     private javax.swing.JPasswordField CampoSenhaCadastro;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }
