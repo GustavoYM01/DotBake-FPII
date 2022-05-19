@@ -35,15 +35,12 @@ public class Cadastro extends javax.swing.JFrame {
         }
     }
     
-//    private void VerificaCampos() {
-//        String t = CampoNomeCadastro1.getText();
-//        String t2 = CampoEmailCadastro.getText();
-//        String t3 = CampoSenhaCadastro.getText();
-//        if(t.isEmpty() || t2.isEmpty() || t3.isEmpty()) {
-//            Tela_Erro te = new Tela_Erro();
-//            te.setVisible(true);
-//        }
-//    }
+    private boolean VerificaCampos() {
+        String t = CampoNomeCadastro1.getText();
+        String t2 = CampoEmailCadastro.getText();
+        String t3 = CampoSenhaCadastro.getText();
+        return t.isEmpty() || t2.isEmpty() || t3.isEmpty();
+    }
 
  
     @SuppressWarnings("unchecked")
@@ -134,11 +131,16 @@ public class Cadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_CampoConfirmaSenhaActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-//        VerificaCampos();
-        cadastraUsuario(novoUsuario);
-        Tela_Login tl = new Tela_Login();
-        tl.setVisible(true);
-        this.dispose();
+        if(VerificaCampos()) {
+            Tela_Erro te = new Tela_Erro();
+            te.setVisible(true);
+        }
+        else {
+            cadastraUsuario(novoUsuario);
+            Tela_Login tl = new Tela_Login();
+            tl.setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void CampoNomeCadastro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoNomeCadastro1ActionPerformed
