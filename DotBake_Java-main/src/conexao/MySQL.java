@@ -5,7 +5,6 @@ import java.sql.Statement;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import javax.swing.JOptionPane;
 
 public class MySQL {
     
@@ -59,7 +58,7 @@ public class MySQL {
             //Class.forName("com.mysql.jdbc.Driver").newInstance();
 
             conn = DriverManager.getConnection("jdbc:mysql://" + servidor + "/" + nomeDoBanco, usuario, senha);
-            //conn = DriverManager.getConnection("jdbc:mysql://localhost3306/banco_loja", "root", "root");
+            //conn = DriverManager.getConnection("jdbc:mysql://localhost3306/dot_bake", "root", "123456");
             
             if(conn != null){
                 System.out.println("Conexão efetuada com sucesso! " + "ID: " + conn);
@@ -102,9 +101,6 @@ public class MySQL {
                     ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
             this.resultSet = this.statement.executeQuery(sql);
 
-//            while (this.getResultSet().next()) {
-//                System.out.println(this.getResultSet().getInt(1));
-//            }
         } catch (SQLException sqlex) {
             sqlex.printStackTrace();
         }

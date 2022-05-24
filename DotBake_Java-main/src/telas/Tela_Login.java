@@ -43,12 +43,6 @@ public class Tela_Login extends javax.swing.JFrame {
             te.setVisible(true);
         }
     }
-    
-//    private void test() {
-//        if(jButton1.getModel().isPressed()) {
-//            
-//        }
-//    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
