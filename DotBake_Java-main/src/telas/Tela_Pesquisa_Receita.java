@@ -76,7 +76,7 @@ public class Tela_Pesquisa_Receita extends javax.swing.JFrame {
         });
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 10, 80, 50));
 
-        BotaoHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telas/correctHomeButtonLight-dotbake.png"))); // NOI18N
+        BotaoHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telas/HomeButtonDark-dotbake.png"))); // NOI18N
         BotaoHome.setBorder(null);
         BotaoHome.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BotaoHome.addActionListener(new java.awt.event.ActionListener() {
@@ -86,7 +86,7 @@ public class Tela_Pesquisa_Receita extends javax.swing.JFrame {
         });
         getContentPane().add(BotaoHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 280, 40, 40));
 
-        BotaoPesquisa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telas/searchButtonDark-dotbake.png"))); // NOI18N
+        BotaoPesquisa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telas/searchButtonLight-dotbake.png"))); // NOI18N
         BotaoPesquisa.setBorder(null);
         BotaoPesquisa.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         BotaoPesquisa.addActionListener(new java.awt.event.ActionListener() {

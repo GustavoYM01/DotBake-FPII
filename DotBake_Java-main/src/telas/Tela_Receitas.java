@@ -89,7 +89,7 @@ public class Tela_Receitas extends javax.swing.JFrame {
         });
         getContentPane().add(BotaoAddReceita, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 650, 60, 60));
 
-        BotaoPesquisa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telas/searchButtonLight-dotbake.png"))); // NOI18N
+        BotaoPesquisa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telas/searchButtonDark-dotbake.png"))); // NOI18N
         BotaoPesquisa.setBorder(null);
         BotaoPesquisa.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BotaoPesquisa.addActionListener(new java.awt.event.ActionListener() {
@@ -97,7 +97,7 @@ public class Tela_Receitas extends javax.swing.JFrame {
                 BotaoPesquisaActionPerformed(evt);
             }
         });
-        getContentPane().add(BotaoPesquisa, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 460, 40, 40));
+        getContentPane().add(BotaoPesquisa, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 470, 40, 30));
 
         CampoReceitas.setEditable(false);
         CampoReceitas.setBackground(new java.awt.Color(255, 227, 205));

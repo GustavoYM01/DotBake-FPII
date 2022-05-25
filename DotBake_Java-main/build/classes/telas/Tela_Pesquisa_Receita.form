@@ -66,7 +66,7 @@
     <Component class="javax.swing.JButton" name="BotaoHome">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/telas/correctHomeButtonLight-dotbake.png"/>
+          <Image iconType="3" name="/telas/HomeButtonDark-dotbake.png"/>
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="null"/>
@@ -87,7 +87,7 @@
     <Component class="javax.swing.JButton" name="BotaoPesquisa">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/telas/searchButtonDark-dotbake.png"/>
+          <Image iconType="3" name="/telas/searchButtonLight-dotbake.png"/>
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="null"/>

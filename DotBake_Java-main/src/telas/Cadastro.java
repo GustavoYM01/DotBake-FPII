@@ -39,7 +39,8 @@ public class Cadastro extends javax.swing.JFrame {
         String t = CampoNomeCadastro1.getText();
         String t2 = CampoEmailCadastro.getText();
         String t3 = CampoSenhaCadastro.getText();
-        return t.isEmpty() || t2.isEmpty() || t3.isEmpty();
+        String t4 = CampoConfirmaSenha.getText();
+        return t.isEmpty() || t2.isEmpty() || t3.isEmpty() || t4.isEmpty();
     }
 
  
@@ -131,16 +132,17 @@ public class Cadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_CampoConfirmaSenhaActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        if(VerificaCampos()) {
+
+            if(VerificaCampos()) {
             Tela_Erro te = new Tela_Erro();
             te.setVisible(true);
-        }
-        else {
-            cadastraUsuario(novoUsuario);
-            Tela_Login tl = new Tela_Login();
-            tl.setVisible(true);
-            this.dispose();
-        }
+          }
+            else {
+                cadastraUsuario(novoUsuario);
+                Tela_Login tl = new Tela_Login();
+                tl.setVisible(true);
+                this.dispose();
+            }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void CampoNomeCadastro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoNomeCadastro1ActionPerformed
