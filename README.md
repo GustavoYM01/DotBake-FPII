@@ -10,3 +10,11 @@ Tecnologias utilizadas:
 >📐Figma
 
 >🐬MySQL
+
+Logo:
+<br />
+<img src="https://github.com/GustavoYM01/DotBake-InProgress/blob/main/Assets/logo.png" width="auto" height="100px"> 
+ 
+ Diagrama de Classes:
+ <br />
+ <img src="https://github.com/GustavoYM01/DotBake-InProgress/blob/main/Assets/diagrama_de_classes.png" width="auto" height="300px"> 
