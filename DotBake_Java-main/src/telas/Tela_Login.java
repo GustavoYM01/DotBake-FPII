@@ -43,6 +43,12 @@ public class Tela_Login extends javax.swing.JFrame {
             te.setVisible(true);
         }
     }
+    
+    private boolean verificaCampos() {
+        String c1 = CampoEmailLogin.getText();
+        String c2 = CampoSenhaLogin.getText();
+        return c1.isEmpty() || c2.isEmpty();
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -138,7 +144,13 @@ public class Tela_Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        iniciaSessao();
+        if(verificaCampos()) {
+            Tela_Erro te = new Tela_Erro();
+            te.setVisible(true);
+        }
+        else {
+            iniciaSessao();
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void CampoEmailLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoEmailLoginActionPerformed
