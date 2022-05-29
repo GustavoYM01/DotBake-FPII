@@ -45,6 +45,11 @@ public class Tela_Pesquisa_Receita extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Erro");
         }
     }
+    
+    private boolean verificaCampo(){
+        String c1 = CampoInserePesquisa.getText();
+        return c1.isEmpty();
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -55,6 +60,8 @@ public class Tela_Pesquisa_Receita extends javax.swing.JFrame {
         BotaoHome = new javax.swing.JButton();
         BotaoPesquisa = new javax.swing.JButton();
         BotaoBuscar = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -63,7 +70,13 @@ public class Tela_Pesquisa_Receita extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         CampoInserePesquisa.setBackground(new java.awt.Color(255, 227, 205));
+        CampoInserePesquisa.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         CampoInserePesquisa.setBorder(null);
+        CampoInserePesquisa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CampoInserePesquisaActionPerformed(evt);
+            }
+        });
         getContentPane().add(CampoInserePesquisa, new org.netbeans.lib.awtextra.AbsoluteConstraints(325, 89, 630, 30));
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telas/correctExitButton-dotbake.png"))); // NOI18N
@@ -107,6 +120,18 @@ public class Tela_Pesquisa_Receita extends javax.swing.JFrame {
         });
         getContentPane().add(BotaoBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 160, 150, 80));
 
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telas/darkDeleteButton-dotBake.png"))); // NOI18N
+        jButton2.setText("jButton2");
+        jButton2.setBorder(null);
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 370, 40, 40));
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telas/correctRefreshButtonDotbake.png"))); // NOI18N
+        jButton1.setText("jButton1");
+        jButton1.setBorder(null);
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 550, 50, 50));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telas/tela pesquisa-dotbake.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
@@ -116,8 +141,14 @@ public class Tela_Pesquisa_Receita extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BotaoBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoBuscarActionPerformed
-       pesquisaTituloReceita();
-       //this.dispose();
+        if(verificaCampo()) {
+            Tela_Erro te = new Tela_Erro();
+            te.setVisible(true);
+        }
+        else {
+            pesquisaTituloReceita();
+            this.dispose();
+        }
     }//GEN-LAST:event_BotaoBuscarActionPerformed
 
     private void BotaoHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoHomeActionPerformed
@@ -133,6 +164,10 @@ public class Tela_Pesquisa_Receita extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void CampoInserePesquisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoInserePesquisaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CampoInserePesquisaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -174,6 +209,8 @@ public class Tela_Pesquisa_Receita extends javax.swing.JFrame {
     private javax.swing.JButton BotaoHome;
     private javax.swing.JButton BotaoPesquisa;
     private javax.swing.JTextField CampoInserePesquisa;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables

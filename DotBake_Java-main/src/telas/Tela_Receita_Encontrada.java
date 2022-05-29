@@ -47,9 +47,11 @@ public class Tela_Receita_Encontrada extends javax.swing.JFrame {
 
         jButton3 = new javax.swing.JButton();
         BotaoHome = new javax.swing.JButton();
-        BotaoPesquisa = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         CampoReceitas = new javax.swing.JTextArea();
+        jButton2 = new javax.swing.JButton();
+        BotaoPesquisa1 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -77,16 +79,6 @@ public class Tela_Receita_Encontrada extends javax.swing.JFrame {
         });
         getContentPane().add(BotaoHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 280, 40, 40));
 
-        BotaoPesquisa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telas/searchButtonLight-dotbake.png"))); // NOI18N
-        BotaoPesquisa.setBorder(null);
-        BotaoPesquisa.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        BotaoPesquisa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotaoPesquisaActionPerformed(evt);
-            }
-        });
-        getContentPane().add(BotaoPesquisa, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 460, 40, 40));
-
         CampoReceitas.setEditable(false);
         CampoReceitas.setBackground(new java.awt.Color(255, 227, 205));
         CampoReceitas.setColumns(20);
@@ -96,6 +88,28 @@ public class Tela_Receita_Encontrada extends javax.swing.JFrame {
         jScrollPane1.setViewportView(CampoReceitas);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(213, 48, 850, 650));
+
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telas/darkDeleteButton-dotBake.png"))); // NOI18N
+        jButton2.setText("jButton2");
+        jButton2.setBorder(null);
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 370, 40, 40));
+
+        BotaoPesquisa1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telas/searchButtonDark-dotbake.png"))); // NOI18N
+        BotaoPesquisa1.setBorder(null);
+        BotaoPesquisa1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BotaoPesquisa1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotaoPesquisa1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(BotaoPesquisa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 470, 40, 30));
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telas/correctRefreshButtonDotbake.png"))); // NOI18N
+        jButton1.setText("jButton1");
+        jButton1.setBorder(null);
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 550, 50, 50));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telas/successSearchScreen-dotbake.png"))); // NOI18N
         jLabel1.setText("jLabel1");
@@ -115,11 +129,11 @@ public class Tela_Receita_Encontrada extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void BotaoPesquisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoPesquisaActionPerformed
+    private void BotaoPesquisa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoPesquisa1ActionPerformed
         Tela_Pesquisa_Receita tpr = new Tela_Pesquisa_Receita();
         tpr.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_BotaoPesquisaActionPerformed
+    }//GEN-LAST:event_BotaoPesquisa1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -158,8 +172,10 @@ public class Tela_Receita_Encontrada extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotaoHome;
-    private javax.swing.JButton BotaoPesquisa;
+    private javax.swing.JButton BotaoPesquisa1;
     private javax.swing.JTextArea CampoReceitas;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;

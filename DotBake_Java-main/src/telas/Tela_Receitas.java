@@ -53,13 +53,15 @@ public class Tela_Receitas extends javax.swing.JFrame {
         BotaoPesquisa = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         CampoReceitas = new javax.swing.JTextArea();
+        jButton2 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        BotaoHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telas/HomeButtonDark-dotbake.png"))); // NOI18N
+        BotaoHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telas/correctHomeButtonLight-dotbake.png"))); // NOI18N
         BotaoHome.setBorder(null);
         BotaoHome.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         BotaoHome.addActionListener(new java.awt.event.ActionListener() {
@@ -109,6 +111,28 @@ public class Tela_Receitas extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(213, 48, 850, 650));
 
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telas/darkDeleteButton-dotBake.png"))); // NOI18N
+        jButton2.setText("jButton2");
+        jButton2.setBorder(null);
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 370, 40, 40));
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telas/correctRefreshButtonDotbake.png"))); // NOI18N
+        jButton1.setText("jButton1");
+        jButton1.setBorder(null);
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 540, 50, 50));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telas/tela receitas-dotbake.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
@@ -136,6 +160,14 @@ public class Tela_Receitas extends javax.swing.JFrame {
         tpr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_BotaoPesquisaActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -177,6 +209,8 @@ public class Tela_Receitas extends javax.swing.JFrame {
     private javax.swing.JButton BotaoHome;
     private javax.swing.JButton BotaoPesquisa;
     private javax.swing.JTextArea CampoReceitas;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
