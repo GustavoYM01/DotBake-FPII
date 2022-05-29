@@ -42,6 +42,12 @@ Dessa forma, basta acessar a sua conta (com email e senha), clicando em "INICIAR
 Caso queira pesquisar por alguma receita, clique no ícone da <strong>lupa</strong>, que você será redirecionado para essa tela:
 <img src="https://github.com/GustavoYM01/DotBake-InProgress/blob/main/Assets/pesquisa_receitas-dotbake.png" width="auto" height="300px">
 <br />
+Pesquisando por uma receita:
+<img src="https://github.com/GustavoYM01/DotBake-InProgress/blob/main/Assets/pesquisando_receita-dotbake.png" width="auto" height="300px">
+<br />
+Se houver receitas relacionadas à pesquisa:
+<img src="https://github.com/GustavoYM01/DotBake-InProgress/blob/main/Assets/pesquisa_receita_encontrada-dotbake.png" width="auto" height="300px">
+<br />
 
 <h2>Ressalvas:</h2>
 Caso o email seja igual ao cadastrado no banco, haverá um aviso gráfico, indicando que o email já está cadastrado:
