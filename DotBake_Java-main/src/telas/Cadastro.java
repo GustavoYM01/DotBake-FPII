@@ -1,6 +1,10 @@
 package telas;
 
 import conexao.MySQL;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import javax.swing.JOptionPane;
 import objetos.Usuario;
 
@@ -16,13 +20,15 @@ public class Cadastro extends javax.swing.JFrame {
     private void cadastraUsuario(Usuario novoUsuario) {
         
         this.connect.conectaBanco();
+        int autoId = 0;
         
         novoUsuario.setNome_Usuario(CampoNomeCadastro1.getText());
         novoUsuario.setEmail(CampoEmailCadastro.getText());
         novoUsuario.setSenha(CampoSenhaCadastro.getText());
         
         try {
-            this.connect.insertSQL("INSERT INTO usuarios"
+            autoId++;
+            this.connect.insertSQL("INSERT INTO usuarios (nome_usuario, email, senha)"
                 + " VALUES (" + "'" + novoUsuario.getNome_Usuario() + "',"
                 + "'" + novoUsuario.getEmail() + "'," + "'" + novoUsuario.getSenha() + "'" + ");");
         } catch (Exception e) {
@@ -35,14 +41,39 @@ public class Cadastro extends javax.swing.JFrame {
         }
     }
     
-    private boolean VerificaCampos() {
+    private boolean verificaCampos() {
         String t = CampoNomeCadastro1.getText();
         String t2 = CampoEmailCadastro.getText();
         String t3 = CampoSenhaCadastro.getText();
         String t4 = CampoConfirmaSenha.getText();
         return t.isEmpty() || t2.isEmpty() || t3.isEmpty() || t4.isEmpty();
     }
+    
+    private boolean verificaUsuario(){
+        
+        boolean bool = false;
+        String campoEmail = CampoEmailCadastro.getText();
 
+        try {
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/dot_bake", "root", "123456");
+            
+            Statement stmt = con.createStatement();
+            
+            String SQL = "SELECT email FROM usuarios WHERE email = " + "'" + campoEmail + "';";
+            
+            ResultSet rs = stmt.executeQuery(SQL);
+            
+            if(rs.next()){
+                JOptionPane.showMessageDialog(null, "Email já cadastrado!");
+                bool = true;
+            }
+            
+        } catch (Exception e) {
+            System.out.println("Erro " +  e.getMessage());
+            JOptionPane.showMessageDialog(null, "Erro");
+        }
+        return bool;
+    }
  
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -53,6 +84,8 @@ public class Cadastro extends javax.swing.JFrame {
         CampoNomeCadastro1 = new javax.swing.JTextField();
         CampoSenhaCadastro = new javax.swing.JPasswordField();
         CampoConfirmaSenha = new javax.swing.JPasswordField();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
@@ -101,6 +134,30 @@ public class Cadastro extends javax.swing.JFrame {
         });
         getContentPane().add(CampoConfirmaSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 420, 470, 40));
 
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telas/correctExitButton-dotbake.png"))); // NOI18N
+        jButton3.setBorder(null);
+        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 10, 80, 50));
+
+        jButton4.setBackground(new java.awt.Color(255, 214, 182));
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/Botao_ja_possui_cadastro.png"))); // NOI18N
+        jButton4.setBorder(null);
+        jButton4.setBorderPainted(false);
+        jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton4.setHideActionText(true);
+        jButton4.setOpaque(false);
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 490, 250, 50));
+
         jButton1.setBackground(new java.awt.Color(255, 214, 182));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/CADASTRAR.png"))); // NOI18N
         jButton1.setBorder(null);
@@ -132,16 +189,22 @@ public class Cadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_CampoConfirmaSenhaActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
-            if(VerificaCampos()) {
+            if(verificaCampos()) {
             Tela_Erro te = new Tela_Erro();
             te.setVisible(true);
           }
             else {
-                cadastraUsuario(novoUsuario);
-                Tela_Login tl = new Tela_Login();
-                tl.setVisible(true);
-                this.dispose();
+                if(verificaUsuario()){ // Se for true, executa o if
+                    Tela_Login tl = new Tela_Login();
+                    tl.setVisible(true);
+                    this.dispose();
+                }
+                else { // Se não for true, executa o else
+                    cadastraUsuario(novoUsuario);
+                    Tela_Login tl = new Tela_Login();
+                    tl.setVisible(true);
+                    this.dispose();
+                }
             }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -152,6 +215,16 @@ public class Cadastro extends javax.swing.JFrame {
     private void CampoEmailCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoEmailCadastroActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CampoEmailCadastroActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        Tela_Login tl = new Tela_Login();
+        tl.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -194,6 +267,8 @@ public class Cadastro extends javax.swing.JFrame {
     private javax.swing.JTextField CampoNomeCadastro1;
     private javax.swing.JPasswordField CampoSenhaCadastro;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
