@@ -55,3 +55,4 @@ Caso o email seja igual ao cadastrado no banco, haverá um aviso gráfico, indic
 <br />
 E por fim, se algum campo estiver incompleto, também mostrará um aviso gráfico:
 <img src="https://github.com/GustavoYM01/DotBake-InProgress/blob/main/Assets/campo_incompleto-dotbake.png" width="auto" height="300px">
+
