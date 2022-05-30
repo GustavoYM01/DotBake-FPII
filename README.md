@@ -17,7 +17,7 @@ Logo:
  
  Diagrama de Classes:
  <br />
- <img src="https://github.com/GustavoYM01/DotBake-InProgress/blob/main/Assets/diagrama_de_classes.png" width="auto" height="300px"> 
+ <img src="https://github.com/GustavoYM01/DotBake-InProgress/blob/main/Assets/diagrama_classes.png" width="auto" height="300px"> 
 
 DER:
 <br />
