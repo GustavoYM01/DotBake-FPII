@@ -96,7 +96,7 @@ public class Tela_AddReceitas extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 10, 80, 50));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 10, 80, 50));
 
         BotaoEnviar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telas/correct-submit-dotbake.png"))); // NOI18N
         BotaoEnviar.setBorder(null);

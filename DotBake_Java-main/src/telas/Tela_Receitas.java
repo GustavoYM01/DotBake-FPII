@@ -162,11 +162,15 @@ public class Tela_Receitas extends javax.swing.JFrame {
     }//GEN-LAST:event_BotaoPesquisaActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        Tela_Deleta_Receita tdr = new Tela_Deleta_Receita();
+        tdr.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        Tela_Atualiza_Receita tar = new Tela_Atualiza_Receita();
+        tar.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

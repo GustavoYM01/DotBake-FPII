@@ -29,7 +29,7 @@ public class Tela_Atualiza_Receita extends javax.swing.JFrame {
               Area_Receitas.append("\n");
               String descricao = rs.getString("descricao");
               Area_Receitas.append(descricao);
-              Area_Receitas.append("\n==========================================================================\n\n");
+              Area_Receitas.append("\n======================================\n\n");
             }
         } catch (Exception e) {
             System.out.println("Erro " +  e.getMessage());
@@ -46,7 +46,7 @@ public class Tela_Atualiza_Receita extends javax.swing.JFrame {
         String receita = Area_Nova_Receita.getText();
         
         try {
-            connect.executarSQL("UPDATE receitas SET titulo = " + "'" + novoTitulo + "'," + "descricao = " + "'" + receita + "'" + "WHERE titulo = " + "'" + tituloAtual + "'" + ";");
+            connect.updateSQL("UPDATE receitas SET titulo = " + "'" + novoTitulo + "'," + "descricao = " + "'" + receita + "'" + "WHERE titulo = " + "'" + tituloAtual + "'" + ";");
         } catch (Exception e) {
             System.out.println(e.getMessage());
             JOptionPane.showMessageDialog(null, "Erro ao atualizar a receita");
@@ -110,11 +110,18 @@ public class Tela_Atualiza_Receita extends javax.swing.JFrame {
         jButton2.setText("jButton2");
         jButton2.setBorder(null);
         jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 310, 40, 40));
 
         Area_Receitas.setEditable(false);
         Area_Receitas.setBackground(new java.awt.Color(255, 227, 205));
         Area_Receitas.setColumns(20);
+        Area_Receitas.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        Area_Receitas.setLineWrap(true);
         Area_Receitas.setRows(5);
         jScrollPane1.setViewportView(Area_Receitas);
 
@@ -142,6 +149,8 @@ public class Tela_Atualiza_Receita extends javax.swing.JFrame {
 
         Area_Nova_Receita.setBackground(new java.awt.Color(255, 227, 205));
         Area_Nova_Receita.setColumns(20);
+        Area_Nova_Receita.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        Area_Nova_Receita.setLineWrap(true);
         Area_Nova_Receita.setRows(5);
         Area_Nova_Receita.setBorder(null);
         jScrollPane2.setViewportView(Area_Nova_Receita);
@@ -178,7 +187,9 @@ public class Tela_Atualiza_Receita extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BotaoHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoHomeActionPerformed
-        // TODO add your handling code here:
+        Tela_Receitas tr = new Tela_Receitas();
+        tr.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_BotaoHomeActionPerformed
 
     private void BotaoPesquisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoPesquisaActionPerformed
@@ -206,7 +217,15 @@ public class Tela_Atualiza_Receita extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         AtualizaReceita();
         this.dispose();
+        Tela_Receitas tr = new Tela_Receitas();
+        tr.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        Tela_Deleta_Receita tdr = new Tela_Deleta_Receita();
+        tdr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
