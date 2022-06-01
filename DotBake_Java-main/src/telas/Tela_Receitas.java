@@ -5,23 +5,45 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
-import java.awt.Font;
+import objetos.Usuario;
 
 public class Tela_Receitas extends javax.swing.JFrame {
 
+    Usuario user = new Usuario();
+    
     public Tela_Receitas() {
         initComponents();
+        
+        String nomeUsuario = "";
+        
+        String emailUsuario = user.getEmailUsuario();
         
         try {
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost/dot_bake", "root", "123456");
             
             Statement stmt = con.createStatement();
+            Statement stmt2 = con.createStatement();
             
             String SQL = "SELECT * FROM receitas;";
+            String SQL2 = "SELECT nome_usuario FROM usuarios WHERE email = " + "'" + emailUsuario + "';";
             
             ResultSet rs = stmt.executeQuery(SQL);
+            ResultSet rs2 = stmt2.executeQuery(SQL2);
+    
+            if(rs2.next()) { // INSERE O NOME DE USUÁRIO NA TEXT AREA DA ESQUERDA
+                nomeUsuario = rs2.getString("nome_usuario");
+                String titulo = "Usuário: ";
+                Campo_usuario.append(titulo);
+                Campo_usuario.append(nomeUsuario);
+                user.setNomeUsuario2(nomeUsuario); // Define o nome de usuário na variável global "nome_usuario2"
+            }
             
             while(rs.next()) {
+              String respons_receita = "RESPONSÁVEL PELA RECEITA: ";
+              String nome_usuario = rs.getString("respons_receita");
+              CampoReceitas.append(respons_receita);
+              CampoReceitas.append(nome_usuario);
+              CampoReceitas.append("\n\n");
               String titulo = rs.getString("titulo");
               CampoReceitas.append(titulo.toUpperCase());
               String separador = ": ";
@@ -55,6 +77,8 @@ public class Tela_Receitas extends javax.swing.JFrame {
         CampoReceitas = new javax.swing.JTextArea();
         jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        Campo_usuario = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -132,6 +156,17 @@ public class Tela_Receitas extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 540, 50, 50));
+
+        Campo_usuario.setEditable(false);
+        Campo_usuario.setBackground(new java.awt.Color(255, 227, 205));
+        Campo_usuario.setColumns(20);
+        Campo_usuario.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        Campo_usuario.setLineWrap(true);
+        Campo_usuario.setRows(5);
+        Campo_usuario.setBorder(null);
+        jScrollPane2.setViewportView(Campo_usuario);
+
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 180, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telas/tela receitas-dotbake.png"))); // NOI18N
         jLabel1.setText("jLabel1");
@@ -213,11 +248,13 @@ public class Tela_Receitas extends javax.swing.JFrame {
     private javax.swing.JButton BotaoHome;
     private javax.swing.JButton BotaoPesquisa;
     private javax.swing.JTextArea CampoReceitas;
+    private javax.swing.JTextArea Campo_usuario;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
 }

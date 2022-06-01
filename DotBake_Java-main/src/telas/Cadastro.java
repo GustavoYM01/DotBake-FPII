@@ -20,14 +20,12 @@ public class Cadastro extends javax.swing.JFrame {
     private void cadastraUsuario(Usuario novoUsuario) {
         
         this.connect.conectaBanco();
-        int autoId = 0;
         
         novoUsuario.setNome_Usuario(CampoNomeCadastro1.getText());
         novoUsuario.setEmail(CampoEmailCadastro.getText());
         novoUsuario.setSenha(CampoSenhaCadastro.getText());
         
         try {
-            autoId++;
             this.connect.insertSQL("INSERT INTO usuarios (nome_usuario, email, senha)"
                 + " VALUES (" + "'" + novoUsuario.getNome_Usuario() + "',"
                 + "'" + novoUsuario.getEmail() + "'," + "'" + novoUsuario.getSenha() + "'" + ");");

@@ -5,6 +5,8 @@ public class Usuario {
     static private String nome_usuario = "";
     static private String email = "";
     static private String senha = "";
+    static private String emailUsuario = "";
+    static private String nome_usuario2 = "";
 
     public Usuario(){ // CONSTRUTOR PADRÃO
     }
@@ -19,6 +21,12 @@ public class Usuario {
     public String getSenha(){
         return senha;
     }
+    public String getEmailUsuario(){
+        return emailUsuario;
+    }
+    public String getNomeUsuario2(){
+        return nome_usuario2;
+    }
     
     public void setNome_Usuario(String nomeUsuario) {
         this.nome_usuario = nomeUsuario;
@@ -28,5 +36,11 @@ public class Usuario {
     }
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+    public void setEmailUsuario(String emailUsuario) {
+        this.emailUsuario = emailUsuario;
+    }
+    public void setNomeUsuario2(String nome_usuario2) {
+        this.nome_usuario2 = nome_usuario2;
     }
 }

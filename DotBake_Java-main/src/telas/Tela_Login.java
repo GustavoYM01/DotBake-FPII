@@ -6,8 +6,11 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
+import objetos.Usuario;
 
 public class Tela_Login extends javax.swing.JFrame {
+    
+    Usuario us = new Usuario();
 
     public Tela_Login() {
         initComponents();
@@ -17,6 +20,8 @@ public class Tela_Login extends javax.swing.JFrame {
         
         String test1 = CampoEmailLogin.getText();
         String test2 = CampoSenhaLogin.getText();
+        
+        us.setEmailUsuario(CampoEmailLogin.getText());
         
         try {
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost/dot_bake", "root", "123456");

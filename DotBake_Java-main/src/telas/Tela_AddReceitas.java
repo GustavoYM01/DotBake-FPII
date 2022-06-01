@@ -1,27 +1,47 @@
 package telas;
 
 import conexao.MySQL;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import javax.swing.JOptionPane;
+import objetos.Usuario;
 
 
 public class Tela_AddReceitas extends javax.swing.JFrame {
     
     MySQL connect = new MySQL(); // FAZ A INSTÂNCIA DO OBJ. MYSQL. DESSA FORMA, É POSSIVEL ACESSAR OS MÉTODOS DA CLASSE MYSQL.
-
+    Usuario user = new Usuario();
+    
     public Tela_AddReceitas() {
         initComponents();
     }
 
-    
     private void insereReceita() {
+        
+        String emailUsuario = user.getEmailUsuario();
+        
         this.connect.conectaBanco();
         
         String titulo = CampoInsereTituloReceita.getText();
         String descricao = CampoInsereDetalhesReceita.getText();
         
         try {
-            this.connect.insertSQL("INSERT INTO receitas (titulo, descricao) VALUES (" 
-                    + "'" + titulo + "'," + "'" + descricao + "'" + ")" + ";");
+            
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/dot_bake", "root", "123456");
+            
+            Statement stmt = con.createStatement();
+            
+            String SQL = "SELECT nome_usuario FROM usuarios WHERE email = " + "'" + emailUsuario + "';";
+            
+            ResultSet rs = stmt.executeQuery(SQL);
+            
+            if(rs.next()) {
+                String nome_usuario = rs.getString("nome_usuario");
+                this.connect.insertSQL("INSERT INTO receitas (titulo, descricao, respons_receita) VALUES (" 
+                    + "'" + titulo + "'," + "'" + descricao + "'," + "'" + nome_usuario + "'" + ")" + ";");
+            }
         } catch (Exception e) {
             System.out.println("Erro ao cadastrar receita " +  e.getMessage());
             JOptionPane.showMessageDialog(null, "Erro ao cadastrar receita");
