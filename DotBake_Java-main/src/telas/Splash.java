@@ -44,7 +44,7 @@ public class Splash extends javax.swing.JFrame {
         setUndecorated(true);
         setResizable(false);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/Splash.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/Splash-screen.png"))); // NOI18N
         jLabel1.setText("jLabel1");
 
         jProgressBar1.setStringPainted(true);
