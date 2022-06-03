@@ -33,7 +33,7 @@
     <Component class="javax.swing.JButton" name="BotaoHome">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/telas/correctHomeButtonLight-dotbake.png"/>
+          <Image iconType="3" name="/src_img/correctHomeButtonLight-dotbake.png"/>
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="null"/>
@@ -54,7 +54,7 @@
     <Component class="javax.swing.JButton" name="jButton3">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/telas/correctExitButton-dotbake.png"/>
+          <Image iconType="3" name="/src_img/correctExitButton-dotbake.png"/>
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="null"/>
@@ -75,7 +75,7 @@
     <Component class="javax.swing.JButton" name="BotaoAddReceita">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/telas/correct-addReceita-dotbake.png"/>
+          <Image iconType="3" name="/src_img/correct-addReceita-dotbake.png"/>
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="null"/>
@@ -96,7 +96,7 @@
     <Component class="javax.swing.JButton" name="BotaoPesquisa">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/telas/searchButtonDark-dotbake.png"/>
+          <Image iconType="3" name="/src_img/searchButtonDark-dotbake.png"/>
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="null"/>
@@ -145,7 +145,7 @@
     <Component class="javax.swing.JButton" name="jButton2">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/telas/darkDeleteButton-dotBake.png"/>
+          <Image iconType="3" name="/src_img/darkDeleteButton-dotBake.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="jButton2"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -167,7 +167,7 @@
     <Component class="javax.swing.JButton" name="jButton1">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/telas/correctRefreshButtonDotbake.png"/>
+          <Image iconType="3" name="/src_img/correctRefreshButtonDotbake.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="jButton1"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -220,7 +220,7 @@
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/telas/tela receitas-dotbake.png"/>
+          <Image iconType="3" name="/src_img/tela receitas-dotbake.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="jLabel1"/>
       </Properties>

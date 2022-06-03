@@ -75,7 +75,7 @@ public class Tela_Atualiza_Receita extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        BotaoHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telas/HomeButtonDark-dotbake.png"))); // NOI18N
+        BotaoHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/HomeButtonDark-dotbake.png"))); // NOI18N
         BotaoHome.setBorder(null);
         BotaoHome.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BotaoHome.addActionListener(new java.awt.event.ActionListener() {
@@ -85,7 +85,7 @@ public class Tela_Atualiza_Receita extends javax.swing.JFrame {
         });
         getContentPane().add(BotaoHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 220, 40, 40));
 
-        BotaoPesquisa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telas/searchButtonDark-dotbake.png"))); // NOI18N
+        BotaoPesquisa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/searchButtonDark-dotbake.png"))); // NOI18N
         BotaoPesquisa.setBorder(null);
         BotaoPesquisa.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BotaoPesquisa.addActionListener(new java.awt.event.ActionListener() {
@@ -95,7 +95,7 @@ public class Tela_Atualiza_Receita extends javax.swing.JFrame {
         });
         getContentPane().add(BotaoPesquisa, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 410, 40, 30));
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telas/refreshButtonLight-dotBake.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/refreshButtonLight-dotBake.png"))); // NOI18N
         jButton1.setText("jButton1");
         jButton1.setBorder(null);
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -106,7 +106,7 @@ public class Tela_Atualiza_Receita extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 490, 50, 50));
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telas/darkDeleteButton-dotBake.png"))); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/darkDeleteButton-dotBake.png"))); // NOI18N
         jButton2.setText("jButton2");
         jButton2.setBorder(null);
         jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -157,7 +157,7 @@ public class Tela_Atualiza_Receita extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 200, 640, 490));
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telas/updateButton-dotBake.png"))); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/updateButton-dotBake.png"))); // NOI18N
         jButton3.setText("jButton3");
         jButton3.setBorder(null);
         jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -168,7 +168,7 @@ public class Tela_Atualiza_Receita extends javax.swing.JFrame {
         });
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 660, 70, 50));
 
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telas/correctExitButton-dotbake.png"))); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/correctExitButton-dotbake.png"))); // NOI18N
         jButton4.setBorder(null);
         jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -178,7 +178,7 @@ public class Tela_Atualiza_Receita extends javax.swing.JFrame {
         });
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 10, 80, 50));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telas/tela atualiza receita.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/tela atualiza receita.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
 

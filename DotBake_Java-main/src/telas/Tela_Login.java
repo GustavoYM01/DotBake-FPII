@@ -34,9 +34,18 @@ public class Tela_Login extends javax.swing.JFrame {
             ResultSet rs = stmt.executeQuery(SQL);
             
             if(rs.next()) {
-                Tela_Receitas tr = new Tela_Receitas();
-                tr.setVisible(true);
-                this.dispose();
+                String email = rs.getString("email");
+                String senha = rs.getString("senha");
+                if(email.equals("admin@adm.com") && senha.equals("admin123")) {
+                    Tela_Receitas tr = new Tela_Receitas();
+                    tr.setVisible(true);
+                    this.dispose();
+                } else {
+                    Tela_Receitas_Usuarios tru = new Tela_Receitas_Usuarios();
+                    tru.setVisible(true);
+                    this.dispose();
+                }
+                
             }
             else {
                 JOptionPane.showMessageDialog(null, "Senha ou email inválido(a)");
@@ -81,7 +90,7 @@ public class Tela_Login extends javax.swing.JFrame {
         });
         getContentPane().add(CampoEmailLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 320, 470, 40));
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telas/correctExitButton-dotbake.png"))); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/correctExitButton-dotbake.png"))); // NOI18N
         jButton3.setBorder(null);
         jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton3.addActionListener(new java.awt.event.ActionListener() {

@@ -46,7 +46,7 @@ public class Tela_Erro extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 10, 50, 40));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telas/correct_Error_Screen-dotbake.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/correct_Error_Screen-dotbake.png"))); // NOI18N
         jLabel3.setText("jLabel3");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 310));
 

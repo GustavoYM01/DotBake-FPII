@@ -23,8 +23,6 @@ public class Tela_Pesquisa_Receita extends javax.swing.JFrame {
             
             pr.setTituloProcurado(CampoInserePesquisa.getText());
             
-            //String campoTituloReceita = CampoInserePesquisa.getText();
-            
             String SQL = "SELECT titulo FROM receitas where titulo LIKE " + "'%" + pr.getTituloProcurado() + "%'" + ";";
             
             ResultSet rs = stmt.executeQuery(SQL);
@@ -32,12 +30,10 @@ public class Tela_Pesquisa_Receita extends javax.swing.JFrame {
             if(rs.next()) {
                 Tela_Receita_Encontrada tre = new Tela_Receita_Encontrada();
                 tre.setVisible(true);
+                this.dispose();
             }
             else {
-                Tela_Receitas tr = new Tela_Receitas();
                 JOptionPane.showMessageDialog(null, "Receita não encontrada");
-                //tr.setVisible(true);
-                //this.dispose();
             }
             
         } catch (Exception e) {
@@ -79,7 +75,7 @@ public class Tela_Pesquisa_Receita extends javax.swing.JFrame {
         });
         getContentPane().add(CampoInserePesquisa, new org.netbeans.lib.awtextra.AbsoluteConstraints(325, 89, 630, 30));
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telas/correctExitButton-dotbake.png"))); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/correctExitButton-dotbake.png"))); // NOI18N
         jButton3.setBorder(null);
         jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -89,7 +85,7 @@ public class Tela_Pesquisa_Receita extends javax.swing.JFrame {
         });
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 10, 80, 50));
 
-        BotaoHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telas/HomeButtonDark-dotbake.png"))); // NOI18N
+        BotaoHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/HomeButtonDark-dotbake.png"))); // NOI18N
         BotaoHome.setBorder(null);
         BotaoHome.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BotaoHome.addActionListener(new java.awt.event.ActionListener() {
@@ -99,7 +95,7 @@ public class Tela_Pesquisa_Receita extends javax.swing.JFrame {
         });
         getContentPane().add(BotaoHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 280, 40, 40));
 
-        BotaoPesquisa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telas/searchButtonLight-dotbake.png"))); // NOI18N
+        BotaoPesquisa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/searchButtonLight-dotbake.png"))); // NOI18N
         BotaoPesquisa.setBorder(null);
         BotaoPesquisa.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         BotaoPesquisa.addActionListener(new java.awt.event.ActionListener() {
@@ -110,7 +106,7 @@ public class Tela_Pesquisa_Receita extends javax.swing.JFrame {
         getContentPane().add(BotaoPesquisa, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 470, 40, 30));
 
         BotaoBuscar.setBackground(new java.awt.Color(255, 214, 182));
-        BotaoBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telas/correct-buscarButton-dotbake.png"))); // NOI18N
+        BotaoBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/correct-buscarButton-dotbake.png"))); // NOI18N
         BotaoBuscar.setBorder(null);
         BotaoBuscar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BotaoBuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -120,7 +116,7 @@ public class Tela_Pesquisa_Receita extends javax.swing.JFrame {
         });
         getContentPane().add(BotaoBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 160, 150, 80));
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telas/darkDeleteButton-dotBake.png"))); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/darkDeleteButton-dotBake.png"))); // NOI18N
         jButton2.setText("jButton2");
         jButton2.setBorder(null);
         jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -131,7 +127,7 @@ public class Tela_Pesquisa_Receita extends javax.swing.JFrame {
         });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 370, 40, 40));
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telas/correctRefreshButtonDotbake.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/correctRefreshButtonDotbake.png"))); // NOI18N
         jButton1.setText("jButton1");
         jButton1.setBorder(null);
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -142,7 +138,7 @@ public class Tela_Pesquisa_Receita extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 550, 50, 50));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telas/tela pesquisa-dotbake.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/tela pesquisa-dotbake.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
 
@@ -157,7 +153,6 @@ public class Tela_Pesquisa_Receita extends javax.swing.JFrame {
         }
         else {
             pesquisaTituloReceita();
-//            this.dispose();
         }
     }//GEN-LAST:event_BotaoBuscarActionPerformed
 
