@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 import objetos.Usuario;
+import java.awt.Color;
 
 public class Tela_Login extends javax.swing.JFrame {
     
@@ -14,6 +15,7 @@ public class Tela_Login extends javax.swing.JFrame {
 
     public Tela_Login() {
         initComponents();
+        setBackground(new Color(0,0,0,0));
     }
     
     private void iniciaSessao() {        
@@ -48,7 +50,8 @@ public class Tela_Login extends javax.swing.JFrame {
                 
             }
             else {
-                JOptionPane.showMessageDialog(null, "Senha ou email inválido(a)");
+                Tela_Erro_2 te2 = new Tela_Erro_2();
+                te2.setVisible(true);
             }
         } catch (Exception e) {
             System.out.println("Erro " +  e.getMessage());
@@ -88,9 +91,9 @@ public class Tela_Login extends javax.swing.JFrame {
                 CampoEmailLoginActionPerformed(evt);
             }
         });
-        getContentPane().add(CampoEmailLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 320, 470, 40));
+        getContentPane().add(CampoEmailLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 330, 310, 30));
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/correctExitButton-dotbake.png"))); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/NewCloseButton-dotbake.png"))); // NOI18N
         jButton3.setBorder(null);
         jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -98,7 +101,7 @@ public class Tela_Login extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 10, 80, 50));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 10, 70, 50));
 
         CampoSenhaLogin.setBackground(new java.awt.Color(255, 227, 205));
         CampoSenhaLogin.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
@@ -108,10 +111,10 @@ public class Tela_Login extends javax.swing.JFrame {
                 CampoSenhaLoginActionPerformed(evt);
             }
         });
-        getContentPane().add(CampoSenhaLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 430, 470, 40));
+        getContentPane().add(CampoSenhaLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 446, 320, 30));
 
         jButton1.setBackground(new java.awt.Color(255, 214, 182));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/NÃO POSSUO CADASTRO.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/naoPossuoCadastro-dotbake_2.png"))); // NOI18N
         jButton1.setBorder(null);
         jButton1.setBorderPainted(false);
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -122,10 +125,10 @@ public class Tela_Login extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 520, 270, 50));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 540, 300, 60));
 
         jButton2.setBackground(new java.awt.Color(255, 214, 182));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/INICIAR SESSÃO.png"))); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/iniciar-secaoDotbake_2.png"))); // NOI18N
         jButton2.setBorder(null);
         jButton2.setBorderPainted(false);
         jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -136,10 +139,10 @@ public class Tela_Login extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 520, 180, 50));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 540, 210, 60));
 
         jLabel1.setBackground(new java.awt.Color(255, 227, 205));
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/Login.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/Login-dotbake2.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, -1));
 

@@ -77,7 +77,7 @@ public class Tela_Pesquisa_Receita_Usuarios extends javax.swing.JFrame {
         });
         getContentPane().add(Botao_Home, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 290, 40, 40));
 
-        Botao_Pesquisa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telas/searchButtonLight-dotbake.png"))); // NOI18N
+        Botao_Pesquisa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/searchButtonLight-dotbake.png"))); // NOI18N
         Botao_Pesquisa.setBorder(null);
         Botao_Pesquisa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

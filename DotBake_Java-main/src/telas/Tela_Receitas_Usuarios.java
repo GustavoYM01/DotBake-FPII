@@ -92,7 +92,7 @@ public class Tela_Receitas_Usuarios extends javax.swing.JFrame {
                 Botao_HomeActionPerformed(evt);
             }
         });
-        getContentPane().add(Botao_Home, new org.netbeans.lib.awtextra.AbsoluteConstraints(1187, 290, 50, 40));
+        getContentPane().add(Botao_Home, new org.netbeans.lib.awtextra.AbsoluteConstraints(1187, 290, 40, 40));
 
         Botao_Pesquisa.setBackground(new java.awt.Color(255, 214, 182));
         Botao_Pesquisa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/searchButtonDark-dotbake.png"))); // NOI18N
@@ -105,7 +105,7 @@ public class Tela_Receitas_Usuarios extends javax.swing.JFrame {
         });
         getContentPane().add(Botao_Pesquisa, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 390, 40, -1));
 
-        Botao_AddReceita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telas/NewAddReceitaButton-dotbake.png"))); // NOI18N
+        Botao_AddReceita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/NewAddReceitaButton-dotbake.png"))); // NOI18N
         Botao_AddReceita.setBorder(null);
         Botao_AddReceita.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Botao_AddReceita.addActionListener(new java.awt.event.ActionListener() {
@@ -138,6 +138,7 @@ public class Tela_Receitas_Usuarios extends javax.swing.JFrame {
         Campo_usuario.setEditable(false);
         Campo_usuario.setBackground(new java.awt.Color(255, 227, 205));
         Campo_usuario.setColumns(20);
+        Campo_usuario.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         Campo_usuario.setLineWrap(true);
         Campo_usuario.setRows(5);
         Campo_usuario.setBorder(null);
@@ -164,7 +165,9 @@ public class Tela_Receitas_Usuarios extends javax.swing.JFrame {
     }//GEN-LAST:event_Botao_HomeActionPerformed
 
     private void Botao_AddReceitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botao_AddReceitaActionPerformed
-        // TODO add your handling code here:
+        Tela_AddReceitas_Usuarios tau = new Tela_AddReceitas_Usuarios();
+        tau.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_Botao_AddReceitaActionPerformed
 
     private void Botao_FecharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botao_FecharActionPerformed

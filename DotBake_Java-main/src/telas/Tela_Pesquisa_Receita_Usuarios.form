@@ -51,7 +51,7 @@
     <Component class="javax.swing.JButton" name="Botao_Pesquisa">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/telas/searchButtonLight-dotbake.png"/>
+          <Image iconType="3" name="/src_img/searchButtonLight-dotbake.png"/>
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="null"/>

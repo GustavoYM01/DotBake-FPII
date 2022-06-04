@@ -38,7 +38,7 @@ public class Tela_Atualiza_Receita extends javax.swing.JFrame {
     }
     
     private void AtualizaReceita() {
-        MySQL connect = new MySQL(); // FAZ A INSTÂNCIA DO OBJ. MYSQL. DESSA FORMA, É POSSIVEL ACESSAR OS MÉTODOS DA CLASSE MYSQL.
+        MySQL connect = new MySQL();
         connect.conectaBanco();
         
         String tituloAtual = CampoTituloAtual.getText();

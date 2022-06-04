@@ -7,14 +7,16 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 import objetos.Usuario;
+import java.awt.Color;
 
 public class Cadastro extends javax.swing.JFrame {
     
-    MySQL connect = new MySQL(); // FAZ A INSTÂNCIA DO OBJ. MYSQL. DESSA FORMA, É POSSIVEL ACESSAR OS MÉTODOS DA CLASSE MYSQL.
-    Usuario novoUsuario = new Usuario(); // FAZ A INSTÂNCIA DO OBJ. USUARIO. ASSIM, PODE-SE ACESSAR OS MÉTODOS DA CLASSE USUARIO.
+    MySQL connect = new MySQL();
+    Usuario novoUsuario = new Usuario();
     
     public Cadastro() {
         initComponents();
+        setBackground(new Color(0,0,0,0));
     }
     
     private void cadastraUsuario(Usuario novoUsuario) {
@@ -79,11 +81,11 @@ public class Cadastro extends javax.swing.JFrame {
 
         jPanel2 = new javax.swing.JPanel();
         CampoEmailCadastro = new javax.swing.JTextField();
+        jButton4 = new javax.swing.JButton();
         CampoNomeCadastro1 = new javax.swing.JTextField();
         CampoSenhaCadastro = new javax.swing.JPasswordField();
         CampoConfirmaSenha = new javax.swing.JPasswordField();
         jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
@@ -100,50 +102,10 @@ public class Cadastro extends javax.swing.JFrame {
                 CampoEmailCadastroActionPerformed(evt);
             }
         });
-        getContentPane().add(CampoEmailCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, 470, 40));
-
-        CampoNomeCadastro1.setBackground(new java.awt.Color(255, 227, 205));
-        CampoNomeCadastro1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        CampoNomeCadastro1.setBorder(null);
-        CampoNomeCadastro1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CampoNomeCadastro1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(CampoNomeCadastro1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, 470, 40));
-
-        CampoSenhaCadastro.setBackground(new java.awt.Color(255, 227, 205));
-        CampoSenhaCadastro.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        CampoSenhaCadastro.setBorder(null);
-        CampoSenhaCadastro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CampoSenhaCadastroActionPerformed(evt);
-            }
-        });
-        getContentPane().add(CampoSenhaCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 330, 470, 40));
-
-        CampoConfirmaSenha.setBackground(new java.awt.Color(255, 227, 205));
-        CampoConfirmaSenha.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        CampoConfirmaSenha.setBorder(null);
-        CampoConfirmaSenha.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CampoConfirmaSenhaActionPerformed(evt);
-            }
-        });
-        getContentPane().add(CampoConfirmaSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 420, 470, 40));
-
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/correctExitButton-dotbake.png"))); // NOI18N
-        jButton3.setBorder(null);
-        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 10, 80, 50));
+        getContentPane().add(CampoEmailCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 280, 320, 30));
 
         jButton4.setBackground(new java.awt.Color(255, 214, 182));
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/Botao_ja_possui_cadastro.png"))); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/possuiCadastro-dotbake_1.png"))); // NOI18N
         jButton4.setBorder(null);
         jButton4.setBorderPainted(false);
         jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -154,10 +116,50 @@ public class Cadastro extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 490, 250, 50));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 530, 270, 70));
+
+        CampoNomeCadastro1.setBackground(new java.awt.Color(255, 227, 205));
+        CampoNomeCadastro1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        CampoNomeCadastro1.setBorder(null);
+        CampoNomeCadastro1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CampoNomeCadastro1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(CampoNomeCadastro1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, 320, 30));
+
+        CampoSenhaCadastro.setBackground(new java.awt.Color(255, 227, 205));
+        CampoSenhaCadastro.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        CampoSenhaCadastro.setBorder(null);
+        CampoSenhaCadastro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CampoSenhaCadastroActionPerformed(evt);
+            }
+        });
+        getContentPane().add(CampoSenhaCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 380, 320, 30));
+
+        CampoConfirmaSenha.setBackground(new java.awt.Color(255, 227, 205));
+        CampoConfirmaSenha.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        CampoConfirmaSenha.setBorder(null);
+        CampoConfirmaSenha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CampoConfirmaSenhaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(CampoConfirmaSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 480, 320, 30));
+
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/NewCloseButton-dotbake.png"))); // NOI18N
+        jButton3.setBorder(null);
+        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 10, 70, 50));
 
         jButton1.setBackground(new java.awt.Color(255, 214, 182));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/CADASTRAR.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/cadastrar2.png"))); // NOI18N
         jButton1.setBorder(null);
         jButton1.setBorderPainted(false);
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -168,9 +170,9 @@ public class Cadastro extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 490, 150, 50));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 540, 150, 50));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/Cadastro.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/Cadastro2.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, -1));
 
@@ -192,12 +194,12 @@ public class Cadastro extends javax.swing.JFrame {
             te.setVisible(true);
           }
             else {
-                if(verificaUsuario()){ // Se for true, executa o if
+                if(verificaUsuario()){
                     Tela_Login tl = new Tela_Login();
                     tl.setVisible(true);
                     this.dispose();
                 }
-                else { // Se não for true, executa o else
+                else {
                     cadastraUsuario(novoUsuario);
                     Tela_Login tl = new Tela_Login();
                     tl.setVisible(true);

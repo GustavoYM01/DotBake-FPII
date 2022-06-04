@@ -44,14 +44,14 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="60" y="320" width="470" height="40"/>
+          <AbsoluteConstraints x="70" y="330" width="310" height="30"/>
         </Constraint>
       </Constraints>
     </Component>
     <Component class="javax.swing.JButton" name="jButton3">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/src_img/correctExitButton-dotbake.png"/>
+          <Image iconType="3" name="/src_img/NewCloseButton-dotbake.png"/>
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="null"/>
@@ -65,7 +65,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="1180" y="10" width="80" height="50"/>
+          <AbsoluteConstraints x="1200" y="10" width="70" height="50"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -86,7 +86,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="60" y="430" width="470" height="40"/>
+          <AbsoluteConstraints x="60" y="446" width="320" height="30"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -96,7 +96,7 @@
           <Color blue="b6" green="d6" red="ff" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/src_img/N&#xc3;O POSSUO CADASTRO.png"/>
+          <Image iconType="3" name="/src_img/naoPossuoCadastro-dotbake_2.png"/>
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="null"/>
@@ -113,7 +113,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="260" y="520" width="270" height="50"/>
+          <AbsoluteConstraints x="250" y="540" width="300" height="60"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -123,7 +123,7 @@
           <Color blue="b6" green="d6" red="ff" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/src_img/INICIAR SESS&#xc3;O.png"/>
+          <Image iconType="3" name="/src_img/iniciar-secaoDotbake_2.png"/>
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="null"/>
@@ -140,7 +140,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="60" y="520" width="180" height="50"/>
+          <AbsoluteConstraints x="40" y="540" width="210" height="60"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -150,7 +150,7 @@
           <Color blue="cd" green="e3" red="ff" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/src_img/Login.png"/>
+          <Image iconType="3" name="/src_img/Login-dotbake2.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="jLabel1"/>
       </Properties>
