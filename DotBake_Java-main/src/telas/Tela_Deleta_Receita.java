@@ -1,6 +1,7 @@
 package telas;
 
 import conexao.MySQL;
+import java.awt.Color;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -11,6 +12,7 @@ public class Tela_Deleta_Receita extends javax.swing.JFrame {
 
     public Tela_Deleta_Receita() {
         initComponents();
+        setBackground(new Color(0,0,0,0));
         
         try {
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost/dot_bake", "root", "123456");
@@ -59,12 +61,12 @@ public class Tela_Deleta_Receita extends javax.swing.JFrame {
         BotaoHome = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
-        BotaoPesquisa = new javax.swing.JButton();
         Campo_Titulo_Deletar = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         Area_Receitas = new javax.swing.JTextArea();
         jButton4 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        BotaoPesquisa1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -79,10 +81,10 @@ public class Tela_Deleta_Receita extends javax.swing.JFrame {
                 BotaoHomeActionPerformed(evt);
             }
         });
-        getContentPane().add(BotaoHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 220, 40, 40));
+        getContentPane().add(BotaoHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 190, 40, 40));
 
+        jButton2.setForeground(new java.awt.Color(255, 214, 182));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/deleteButtonDotbake.png"))); // NOI18N
-        jButton2.setText("jButton2");
         jButton2.setBorder(null);
         jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -90,7 +92,7 @@ public class Tela_Deleta_Receita extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 310, 40, 40));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 390, 50, 40));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/correctRefreshButtonDotbake.png"))); // NOI18N
         jButton1.setText("jButton1");
@@ -101,17 +103,7 @@ public class Tela_Deleta_Receita extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 490, 50, 50));
-
-        BotaoPesquisa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/searchButtonDark-dotbake.png"))); // NOI18N
-        BotaoPesquisa.setBorder(null);
-        BotaoPesquisa.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        BotaoPesquisa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotaoPesquisaActionPerformed(evt);
-            }
-        });
-        getContentPane().add(BotaoPesquisa, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 410, 40, 30));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 480, 50, 50));
 
         Campo_Titulo_Deletar.setBackground(new java.awt.Color(255, 227, 205));
         Campo_Titulo_Deletar.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
@@ -142,7 +134,7 @@ public class Tela_Deleta_Receita extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 630, 150, 80));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 630, 160, 80));
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/NewCloseButton-dotbake.png"))); // NOI18N
         jButton3.setBorder(null);
@@ -154,7 +146,17 @@ public class Tela_Deleta_Receita extends javax.swing.JFrame {
         });
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 10, 70, 50));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/tela deleta receita.png"))); // NOI18N
+        BotaoPesquisa1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/searchButtonDark-dotbake.png"))); // NOI18N
+        BotaoPesquisa1.setBorder(null);
+        BotaoPesquisa1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BotaoPesquisa1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotaoPesquisa1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(BotaoPesquisa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 290, 40, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/tela deleta receita (admin).png"))); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
 
@@ -171,12 +173,6 @@ public class Tela_Deleta_Receita extends javax.swing.JFrame {
         tr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_BotaoHomeActionPerformed
-
-    private void BotaoPesquisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoPesquisaActionPerformed
-        Tela_Pesquisa_Receita tpr = new Tela_Pesquisa_Receita();
-        tpr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_BotaoPesquisaActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         this.dispose();
@@ -198,6 +194,12 @@ public class Tela_Deleta_Receita extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void BotaoPesquisa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoPesquisa1ActionPerformed
+        Tela_Pesquisa_Receita tpr = new Tela_Pesquisa_Receita();
+        tpr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_BotaoPesquisa1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -237,7 +239,7 @@ public class Tela_Deleta_Receita extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea Area_Receitas;
     private javax.swing.JButton BotaoHome;
-    private javax.swing.JButton BotaoPesquisa;
+    private javax.swing.JButton BotaoPesquisa1;
     private javax.swing.JTextField Campo_Titulo_Deletar;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;

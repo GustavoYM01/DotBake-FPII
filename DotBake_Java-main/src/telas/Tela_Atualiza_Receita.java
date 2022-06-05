@@ -6,11 +6,13 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 import conexao.MySQL;
+import java.awt.Color;
 
 public class Tela_Atualiza_Receita extends javax.swing.JFrame {
 
     public Tela_Atualiza_Receita() {
         initComponents();
+        setBackground(new Color(0,0,0,0));
         
         try {
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost/dot_bake", "root", "123456");
@@ -83,8 +85,9 @@ public class Tela_Atualiza_Receita extends javax.swing.JFrame {
                 BotaoHomeActionPerformed(evt);
             }
         });
-        getContentPane().add(BotaoHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 220, 40, 40));
+        getContentPane().add(BotaoHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 190, 40, 40));
 
+        BotaoPesquisa.setBackground(new java.awt.Color(255, 214, 182));
         BotaoPesquisa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/searchButtonDark-dotbake.png"))); // NOI18N
         BotaoPesquisa.setBorder(null);
         BotaoPesquisa.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -93,7 +96,7 @@ public class Tela_Atualiza_Receita extends javax.swing.JFrame {
                 BotaoPesquisaActionPerformed(evt);
             }
         });
-        getContentPane().add(BotaoPesquisa, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 410, 40, 30));
+        getContentPane().add(BotaoPesquisa, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 290, 40, 40));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/refreshButtonLight-dotBake.png"))); // NOI18N
         jButton1.setText("jButton1");
@@ -104,7 +107,7 @@ public class Tela_Atualiza_Receita extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 490, 50, 50));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 480, 50, 50));
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/darkDeleteButton-dotBake.png"))); // NOI18N
         jButton2.setText("jButton2");
@@ -115,7 +118,7 @@ public class Tela_Atualiza_Receita extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 310, 40, 40));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 390, 60, 40));
 
         Area_Receitas.setEditable(false);
         Area_Receitas.setBackground(new java.awt.Color(255, 227, 205));
@@ -178,7 +181,7 @@ public class Tela_Atualiza_Receita extends javax.swing.JFrame {
         });
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 10, 70, 50));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/tela atualiza receita.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/tela atualiza receita (admin).png"))); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
 

@@ -1,5 +1,6 @@
 package telas;
 
+import java.awt.Color;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -11,6 +12,7 @@ public class Tela_Pesquisa_Receita extends javax.swing.JFrame {
 
     public Tela_Pesquisa_Receita() {
         initComponents();
+        setBackground(new Color(0,0,0,0));
     }
     
     private void pesquisaTituloReceita() {
@@ -58,7 +60,6 @@ public class Tela_Pesquisa_Receita extends javax.swing.JFrame {
         Botão_Deleta = new javax.swing.JButton();
         Botao_Atualiza = new javax.swing.JButton();
         Botao_Pesquisa = new javax.swing.JButton();
-        CampoInserePesquisa1 = new javax.swing.JTextField();
         BotaoBuscar1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
@@ -75,7 +76,7 @@ public class Tela_Pesquisa_Receita extends javax.swing.JFrame {
                 CampoInserePesquisaActionPerformed(evt);
             }
         });
-        getContentPane().add(CampoInserePesquisa, new org.netbeans.lib.awtextra.AbsoluteConstraints(325, 89, 630, 30));
+        getContentPane().add(CampoInserePesquisa, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 360, 720, 40));
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/NewCloseButton-dotbake.png"))); // NOI18N
         jButton3.setBorder(null);
@@ -139,16 +140,6 @@ public class Tela_Pesquisa_Receita extends javax.swing.JFrame {
         });
         getContentPane().add(Botao_Pesquisa, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 290, -1, -1));
 
-        CampoInserePesquisa1.setBackground(new java.awt.Color(255, 227, 205));
-        CampoInserePesquisa1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        CampoInserePesquisa1.setBorder(null);
-        CampoInserePesquisa1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CampoInserePesquisa1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(CampoInserePesquisa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(255, 359, 720, 40));
-
         BotaoBuscar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/sideButtonsearch-dotbake.png"))); // NOI18N
         BotaoBuscar1.setBorder(null);
         BotaoBuscar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -207,10 +198,6 @@ public class Tela_Pesquisa_Receita extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Botao_PesquisaActionPerformed
 
-    private void CampoInserePesquisa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoInserePesquisa1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CampoInserePesquisa1ActionPerformed
-
     private void BotaoBuscar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoBuscar1ActionPerformed
         if(verificaCampo()) {
             Tela_Erro te = new Tela_Erro();
@@ -264,7 +251,6 @@ public class Tela_Pesquisa_Receita extends javax.swing.JFrame {
     private javax.swing.JButton Botao_Pesquisa;
     private javax.swing.JButton Botão_Deleta;
     private javax.swing.JTextField CampoInserePesquisa;
-    private javax.swing.JTextField CampoInserePesquisa1;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
