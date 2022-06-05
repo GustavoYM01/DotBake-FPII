@@ -72,6 +72,7 @@ public class Tela_AddReceitas extends javax.swing.JFrame {
         BotaoHome1 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         Botao_Enviar = new javax.swing.JButton();
+        logoff = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -161,6 +162,16 @@ public class Tela_AddReceitas extends javax.swing.JFrame {
         });
         getContentPane().add(Botao_Enviar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 610, 170, 100));
 
+        logoff.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/logoff2-dotbake.png"))); // NOI18N
+        logoff.setBorder(null);
+        logoff.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        logoff.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logoffActionPerformed(evt);
+            }
+        });
+        getContentPane().add(logoff, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 640, 50, 40));
+
         jLabel1.setBackground(new java.awt.Color(255, 227, 205));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/Add receita (admin).png"))); // NOI18N
         jLabel1.setText("jLabel1");
@@ -215,6 +226,12 @@ public class Tela_AddReceitas extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_Botao_EnviarActionPerformed
 
+    private void logoffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoffActionPerformed
+        Tela_Login tl = new Tela_Login();
+        tl.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_logoffActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -262,5 +279,6 @@ public class Tela_AddReceitas extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton logoff;
     // End of variables declaration//GEN-END:variables
 }

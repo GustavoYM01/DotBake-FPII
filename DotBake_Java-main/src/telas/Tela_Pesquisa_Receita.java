@@ -61,6 +61,7 @@ public class Tela_Pesquisa_Receita extends javax.swing.JFrame {
         Botao_Atualiza = new javax.swing.JButton();
         Botao_Pesquisa = new javax.swing.JButton();
         BotaoBuscar1 = new javax.swing.JButton();
+        logoff = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -150,6 +151,16 @@ public class Tela_Pesquisa_Receita extends javax.swing.JFrame {
         });
         getContentPane().add(BotaoBuscar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 350, 50, 60));
 
+        logoff.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/logoff2-dotbake.png"))); // NOI18N
+        logoff.setBorder(null);
+        logoff.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        logoff.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logoffActionPerformed(evt);
+            }
+        });
+        getContentPane().add(logoff, new org.netbeans.lib.awtextra.AbsoluteConstraints(1185, 570, 50, 40));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/tela pesquisa (admin).png"))); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
@@ -208,6 +219,12 @@ public class Tela_Pesquisa_Receita extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_BotaoBuscar1ActionPerformed
 
+    private void logoffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoffActionPerformed
+        Tela_Login tl = new Tela_Login();
+        tl.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_logoffActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -253,5 +270,6 @@ public class Tela_Pesquisa_Receita extends javax.swing.JFrame {
     private javax.swing.JTextField CampoInserePesquisa;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton logoff;
     // End of variables declaration//GEN-END:variables
 }

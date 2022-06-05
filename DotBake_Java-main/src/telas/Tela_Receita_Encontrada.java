@@ -54,6 +54,7 @@ public class Tela_Receita_Encontrada extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         BotaoPesquisa1 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        logoff = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -95,6 +96,11 @@ public class Tela_Receita_Encontrada extends javax.swing.JFrame {
         jButton2.setText("jButton2");
         jButton2.setBorder(null);
         jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 390, 60, 40));
 
         BotaoPesquisa1.setBackground(new java.awt.Color(255, 214, 182));
@@ -112,7 +118,22 @@ public class Tela_Receita_Encontrada extends javax.swing.JFrame {
         jButton1.setText("jButton1");
         jButton1.setBorder(null);
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 480, 50, 50));
+
+        logoff.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/logoff2-dotbake.png"))); // NOI18N
+        logoff.setBorder(null);
+        logoff.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        logoff.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logoffActionPerformed(evt);
+            }
+        });
+        getContentPane().add(logoff, new org.netbeans.lib.awtextra.AbsoluteConstraints(1185, 570, 50, 40));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/tela resultado da pesquisa (admin).png"))); // NOI18N
         jLabel1.setText("jLabel1");
@@ -137,6 +158,24 @@ public class Tela_Receita_Encontrada extends javax.swing.JFrame {
         tpr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_BotaoPesquisa1ActionPerformed
+
+    private void logoffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoffActionPerformed
+        Tela_Login tl = new Tela_Login();
+        tl.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_logoffActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        Tela_Deleta_Receita tdr = new Tela_Deleta_Receita();
+        tdr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       Tela_Atualiza_Receita tar = new Tela_Atualiza_Receita();
+       tar.setVisible(true);
+       this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -182,5 +221,6 @@ public class Tela_Receita_Encontrada extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton logoff;
     // End of variables declaration//GEN-END:variables
 }

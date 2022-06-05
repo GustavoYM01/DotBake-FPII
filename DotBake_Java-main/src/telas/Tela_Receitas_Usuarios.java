@@ -74,6 +74,7 @@ public class Tela_Receitas_Usuarios extends javax.swing.JFrame {
         Botao_Fechar = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         Campo_usuario = new javax.swing.JTextArea();
+        logoff = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -146,6 +147,16 @@ public class Tela_Receitas_Usuarios extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 150, -1));
 
+        logoff.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/logoff2-dotbake.png"))); // NOI18N
+        logoff.setBorder(null);
+        logoff.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        logoff.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logoffActionPerformed(evt);
+            }
+        });
+        getContentPane().add(logoff, new org.netbeans.lib.awtextra.AbsoluteConstraints(1185, 480, 50, 40));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/tela receitas (user).png"))); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
@@ -173,6 +184,12 @@ public class Tela_Receitas_Usuarios extends javax.swing.JFrame {
     private void Botao_FecharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botao_FecharActionPerformed
         this.dispose();
     }//GEN-LAST:event_Botao_FecharActionPerformed
+
+    private void logoffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoffActionPerformed
+        Tela_Login tl = new Tela_Login();
+        tl.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_logoffActionPerformed
 
     /**
      * @param args the command line arguments
@@ -219,5 +236,6 @@ public class Tela_Receitas_Usuarios extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JButton logoff;
     // End of variables declaration//GEN-END:variables
 }
