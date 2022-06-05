@@ -65,11 +65,11 @@ public class Tela_AddReceitas extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         BotaoPesquisa1 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        BotaoEnviar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         CampoInsereDetalhesReceita = new javax.swing.JTextArea();
         BotaoHome1 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        Botao_Enviar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -118,16 +118,6 @@ public class Tela_AddReceitas extends javax.swing.JFrame {
         });
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 10, 80, 50));
 
-        BotaoEnviar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/correct-submit-dotbake.png"))); // NOI18N
-        BotaoEnviar.setBorder(null);
-        BotaoEnviar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        BotaoEnviar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotaoEnviarActionPerformed(evt);
-            }
-        });
-        getContentPane().add(BotaoEnviar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 630, 140, 80));
-
         CampoInsereDetalhesReceita.setBackground(new java.awt.Color(255, 227, 205));
         CampoInsereDetalhesReceita.setColumns(20);
         CampoInsereDetalhesReceita.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
@@ -159,6 +149,16 @@ public class Tela_AddReceitas extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 540, 50, 50));
 
+        Botao_Enviar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/NewSubmitButton-dotbake.png"))); // NOI18N
+        Botao_Enviar.setBorder(null);
+        Botao_Enviar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Botao_Enviar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Botao_EnviarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Botao_Enviar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 610, 170, 100));
+
         jLabel1.setBackground(new java.awt.Color(255, 227, 205));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/tela inicial-dotbake.png"))); // NOI18N
         jLabel1.setText("jLabel1");
@@ -171,19 +171,6 @@ public class Tela_AddReceitas extends javax.swing.JFrame {
     private void CampoInsereTituloReceitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoInsereTituloReceitaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CampoInsereTituloReceitaActionPerformed
-
-    private void BotaoEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoEnviarActionPerformed
-        if(verificaCampos()) {
-            Tela_Erro te = new Tela_Erro();
-            te.setVisible(true);
-        }
-        else {
-            insereReceita();
-            Tela_Receitas tr = new Tela_Receitas();
-            tr.setVisible(true);
-            this.dispose();
-        }
-    }//GEN-LAST:event_BotaoEnviarActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         this.dispose();
@@ -212,6 +199,19 @@ public class Tela_AddReceitas extends javax.swing.JFrame {
         tar.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void Botao_EnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botao_EnviarActionPerformed
+        if(verificaCampos()) {
+            Tela_Erro te = new Tela_Erro();
+            te.setVisible(true);
+        }
+        else {
+            insereReceita();
+            Tela_Receitas tr = new Tela_Receitas();
+            tr.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_Botao_EnviarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -250,9 +250,9 @@ public class Tela_AddReceitas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BotaoEnviar;
     private javax.swing.JButton BotaoHome1;
     private javax.swing.JButton BotaoPesquisa1;
+    private javax.swing.JButton Botao_Enviar;
     private javax.swing.JTextArea CampoInsereDetalhesReceita;
     private javax.swing.JTextField CampoInsereTituloReceita;
     private javax.swing.JButton jButton1;

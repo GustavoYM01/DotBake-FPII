@@ -1,5 +1,6 @@
 package telas;
 
+import java.awt.Color;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -13,6 +14,7 @@ public class Tela_Receitas extends javax.swing.JFrame {
     
     public Tela_Receitas() {
         initComponents();
+        setBackground(new Color(0,0,0,0));
         
         String nomeUsuario = "";
         
@@ -88,9 +90,9 @@ public class Tela_Receitas extends javax.swing.JFrame {
                 BotaoHomeActionPerformed(evt);
             }
         });
-        getContentPane().add(BotaoHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 280, 40, 40));
+        getContentPane().add(BotaoHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 190, 40, 40));
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/correctExitButton-dotbake.png"))); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/NewCloseButton-dotbake.png"))); // NOI18N
         jButton3.setBorder(null);
         jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -98,9 +100,9 @@ public class Tela_Receitas extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 10, 80, 50));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 10, 70, 50));
 
-        BotaoAddReceita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/correct-addReceita-dotbake.png"))); // NOI18N
+        BotaoAddReceita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/NewAddReceitaButton-dotbake.png"))); // NOI18N
         BotaoAddReceita.setBorder(null);
         BotaoAddReceita.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BotaoAddReceita.addActionListener(new java.awt.event.ActionListener() {
@@ -108,7 +110,7 @@ public class Tela_Receitas extends javax.swing.JFrame {
                 BotaoAddReceitaActionPerformed(evt);
             }
         });
-        getContentPane().add(BotaoAddReceita, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 650, 60, 60));
+        getContentPane().add(BotaoAddReceita, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 630, 80, 80));
 
         BotaoPesquisa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/searchButtonDark-dotbake.png"))); // NOI18N
         BotaoPesquisa.setBorder(null);
@@ -118,7 +120,7 @@ public class Tela_Receitas extends javax.swing.JFrame {
                 BotaoPesquisaActionPerformed(evt);
             }
         });
-        getContentPane().add(BotaoPesquisa, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 470, 40, 30));
+        getContentPane().add(BotaoPesquisa, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 293, 40, -1));
 
         CampoReceitas.setEditable(false);
         CampoReceitas.setBackground(new java.awt.Color(255, 227, 205));
@@ -139,7 +141,7 @@ public class Tela_Receitas extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 370, 40, 40));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 390, 50, 40));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/correctRefreshButtonDotbake.png"))); // NOI18N
         jButton1.setText("jButton1");
@@ -150,7 +152,7 @@ public class Tela_Receitas extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 540, 50, 50));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 480, 50, 50));
 
         Campo_usuario.setEditable(false);
         Campo_usuario.setBackground(new java.awt.Color(255, 227, 205));
@@ -163,7 +165,7 @@ public class Tela_Receitas extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 180, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/tela receitas-dotbake.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/tela receitas (admin).png"))); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
 

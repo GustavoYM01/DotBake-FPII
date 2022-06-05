@@ -157,8 +157,8 @@ public class Tela_Atualiza_Receita extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 200, 640, 490));
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/updateButton-dotBake.png"))); // NOI18N
-        jButton3.setText("jButton3");
+        jButton3.setBackground(new java.awt.Color(255, 214, 182));
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/NewUpdateButton-dotbake2.png"))); // NOI18N
         jButton3.setBorder(null);
         jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -166,9 +166,9 @@ public class Tela_Atualiza_Receita extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 660, 70, 50));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 630, 80, 80));
 
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/correctExitButton-dotbake.png"))); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/NewCloseButton-dotbake.png"))); // NOI18N
         jButton4.setBorder(null);
         jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -176,7 +176,7 @@ public class Tela_Atualiza_Receita extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 10, 80, 50));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 10, 70, 50));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/tela atualiza receita.png"))); // NOI18N
         jLabel1.setText("jLabel1");
