@@ -13,7 +13,7 @@ Tecnologias utilizadas:
 
 Logo:
 <br />
-<img src="https://github.com/GustavoYM01/DotBake-InProgress/blob/main/Assets/logo.png" width="auto" height="100px"> 
+<img src="https://github.com/GustavoYM01/DotBake-InProgress/blob/main/Assets/Logo2-dotbake.png" width="auto" height="100px"> 
  
  Diagrama de Classes:
  <br />
