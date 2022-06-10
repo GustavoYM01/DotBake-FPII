@@ -6,45 +6,49 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import objetos.ConfirmaExclusao;
 
 public class Tela_Deleta_Receita extends javax.swing.JFrame {
 
     public Tela_Deleta_Receita() {
         initComponents();
-        setBackground(new Color(0,0,0,0));
-        
+        setBackground(new Color(0, 0, 0, 0));
+
         try {
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost/dot_bake", "root", "123456");
-            
+
             Statement stmt = con.createStatement();
-            
+
             String SQL = "SELECT * FROM receitas;";
-            
+
             ResultSet rs = stmt.executeQuery(SQL);
-            
-            while(rs.next()) {
-              String titulo = rs.getString("titulo");
-              Area_Receitas.append(titulo.toUpperCase());
-              String separador = ": ";
-              Area_Receitas.append(separador);
-              Area_Receitas.append("\n");
-              String descricao = rs.getString("descricao");
-              Area_Receitas.append(descricao);
-              Area_Receitas.append("\n======================================\n\n");
+
+            while (rs.next()) {
+                String titulo = rs.getString("titulo");
+                Area_Receitas.append(titulo.toUpperCase());
+                String separador = ": ";
+                Area_Receitas.append(separador);
+                Area_Receitas.append("\n");
+                String descricao = rs.getString("descricao");
+                Area_Receitas.append(descricao);
+                Area_Receitas.append("\n=====================================\n\n");
             }
+
         } catch (Exception e) {
-            System.out.println("Erro " +  e.getMessage());
+            System.out.println("Erro " + e.getMessage());
             JOptionPane.showMessageDialog(null, "Erro");
         }
     }
-    
+
     private void deletaReceita() {
         MySQL connect = new MySQL(); // FAZ A INSTÂNCIA DO OBJ. MYSQL. DESSA FORMA, É POSSIVEL ACESSAR OS MÉTODOS DA CLASSE MYSQL.
         connect.conectaBanco();
-        
+
         String campo1 = Campo_Titulo_Deletar.getText();
-        
+
         try {
             connect.updateSQL("DELETE FROM receitas WHERE titulo = " + "'" + campo1 + "'" + ";");
         } catch (Exception e) {
@@ -52,7 +56,6 @@ public class Tela_Deleta_Receita extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Erro ao atualizar a receita");
         }
     }
-
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -190,10 +193,48 @@ public class Tela_Deleta_Receita extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        deletaReceita();
-        Tela_Receitas tr = new Tela_Receitas();
-        tr.setVisible(true);
-        this.dispose();
+        ConfirmaExclusao ce = new ConfirmaExclusao();
+        Tela_Confirmacao_Exclusao tce = new Tela_Confirmacao_Exclusao();
+        tce.setVisible(true);
+
+//        ConfirmaExclusao ce = new ConfirmaExclusao();
+//        boolean op = ce.getOpcao();
+//
+//        if (op == true) {
+//            deletaReceita();
+//            Tela_Popup_Receita_Deletada tprd = new Tela_Popup_Receita_Deletada();
+//            tprd.setVisible(true);
+//        }
+        Thread t = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(5000);
+
+                    boolean op = ce.getOpcao();
+
+                    System.out.println(op);
+
+                    if (op == false) {
+                        tce.dispose();
+                    } else if (op == true) {
+                        deletaReceita();
+                        Tela_Popup_Receita_Deletada tprd = new Tela_Popup_Receita_Deletada();
+                        tprd.setVisible(true);
+                        Thread.sleep(1500);
+                        tprd.dispose();
+                        Tela_Receitas tr = new Tela_Receitas();
+                        tr.setVisible(true);
+                        dispose();
+                    }
+                    ce.setOpcao(false);
+
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(Splash.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        });
+        t.start();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

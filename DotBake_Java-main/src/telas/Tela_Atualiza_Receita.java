@@ -7,12 +7,16 @@ import java.sql.Statement;
 import javax.swing.JOptionPane;
 import conexao.MySQL;
 import java.awt.Color;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Tela_Atualiza_Receita extends javax.swing.JFrame {
 
     public Tela_Atualiza_Receita() {
         initComponents();
         setBackground(new Color(0,0,0,0));
+        jScrollPane1.setBorder(null);
+        jScrollPane2.setBorder(null);
         
         try {
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost/dot_bake", "root", "123456");
@@ -31,7 +35,7 @@ public class Tela_Atualiza_Receita extends javax.swing.JFrame {
               Area_Receitas.append("\n");
               String descricao = rs.getString("descricao");
               Area_Receitas.append(descricao);
-              Area_Receitas.append("\n======================================\n\n");
+              Area_Receitas.append("\n=====================================\n\n");
             }
         } catch (Exception e) {
             System.out.println("Erro " +  e.getMessage());
@@ -49,6 +53,28 @@ public class Tela_Atualiza_Receita extends javax.swing.JFrame {
         
         try {
             connect.updateSQL("UPDATE receitas SET titulo = " + "'" + novoTitulo + "'," + "descricao = " + "'" + receita + "'" + "WHERE titulo = " + "'" + tituloAtual + "'" + ";");
+        
+            Thread t = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        Tela_Popup_Receita_Atualizada tpra = new Tela_Popup_Receita_Atualizada();
+                        tpra.setVisible(true);
+                        
+                        Thread.sleep(2000);
+                        
+                        Tela_Receitas_Usuarios tra = new Tela_Receitas_Usuarios();
+                        tra.setVisible(true);
+                        
+                        tpra.dispose();
+                        dispose();
+                    } catch (InterruptedException ex) {
+                        Logger.getLogger(Splash.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+            });
+            t.start();
+            
         } catch (Exception e) {
             System.out.println(e.getMessage());
             JOptionPane.showMessageDialog(null, "Erro ao atualizar a receita");
@@ -159,7 +185,7 @@ public class Tela_Atualiza_Receita extends javax.swing.JFrame {
         Area_Nova_Receita.setBorder(null);
         jScrollPane2.setViewportView(Area_Nova_Receita);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 200, 640, 490));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 210, 620, 480));
 
         jButton3.setBackground(new java.awt.Color(255, 214, 182));
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src_img/NewUpdateButton-dotbake2.png"))); // NOI18N
@@ -230,9 +256,6 @@ public class Tela_Atualiza_Receita extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         AtualizaReceita();
-        this.dispose();
-        Tela_Receitas tr = new Tela_Receitas();
-        tr.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

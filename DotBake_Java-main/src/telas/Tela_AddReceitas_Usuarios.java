@@ -5,6 +5,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import objetos.Usuario;
 
@@ -20,6 +22,7 @@ public class Tela_AddReceitas_Usuarios extends javax.swing.JFrame {
     public Tela_AddReceitas_Usuarios() {
         initComponents();
         setBackground(new Color(0,0,0,0));
+        jScrollPane1.setBorder(null);
     }
     
     private void insereReceita() {
@@ -46,6 +49,28 @@ public class Tela_AddReceitas_Usuarios extends javax.swing.JFrame {
                 this.connect.insertSQL("INSERT INTO receitas (titulo, descricao, respons_receita) VALUES (" 
                     + "'" + titulo + "'," + "'" + descricao + "'," + "'" + nome_usuario + "'" + ")" + ";");
             }
+            
+            Thread t = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        Tela_Popup_Receita_Add tpra = new Tela_Popup_Receita_Add();
+                        tpra.setVisible(true);
+                        
+                        Thread.sleep(2000);
+                        
+                        Tela_Receitas_Usuarios tra = new Tela_Receitas_Usuarios();
+                        tra.setVisible(true);
+                        
+                        tpra.dispose();
+                        dispose();
+                    } catch (InterruptedException ex) {
+                        Logger.getLogger(Splash.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+            });
+            t.start();
+            
         } catch (Exception e) {
             System.out.println("Erro ao cadastrar receita " +  e.getMessage());
             JOptionPane.showMessageDialog(null, "Erro ao cadastrar receita");
@@ -161,11 +186,15 @@ public class Tela_AddReceitas_Usuarios extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Botao_PesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botao_PesquisarActionPerformed
-        // TODO add your handling code here:
+        Tela_Pesquisa_Receita_Usuarios tpru = new Tela_Pesquisa_Receita_Usuarios();
+        tpru.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_Botao_PesquisarActionPerformed
 
     private void Botao_HomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botao_HomeActionPerformed
-        // TODO add your handling code here:
+        Tela_Receitas_Usuarios tru = new Tela_Receitas_Usuarios();
+        tru.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_Botao_HomeActionPerformed
 
     private void CampoInsereTituloReceitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoInsereTituloReceitaActionPerformed
@@ -183,9 +212,6 @@ public class Tela_AddReceitas_Usuarios extends javax.swing.JFrame {
         }
         else {
             insereReceita();
-            Tela_Receitas_Usuarios tru = new Tela_Receitas_Usuarios();
-            tru.setVisible(true);
-            this.dispose();
         }
     }//GEN-LAST:event_Botao_EnviarActionPerformed
 

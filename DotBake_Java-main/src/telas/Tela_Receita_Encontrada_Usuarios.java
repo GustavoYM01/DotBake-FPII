@@ -13,6 +13,7 @@ public class Tela_Receita_Encontrada_Usuarios extends javax.swing.JFrame {
     public Tela_Receita_Encontrada_Usuarios() {
         initComponents();
         setBackground(new Color(0,0,0,0));
+        jScrollPane1.setBorder(null);
         
         try {
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost/dot_bake", "root", "123456");
@@ -35,7 +36,7 @@ public class Tela_Receita_Encontrada_Usuarios extends javax.swing.JFrame {
               CampoReceitas.append("\n");
               String descricao = rs.getString("descricao");
               CampoReceitas.append(descricao);
-              CampoReceitas.append("\n==========================================================================\n\n");
+              CampoReceitas.append("\n=========================================================================\n\n");
             }
         } catch (Exception e) {
             System.out.println("Erro ao buscar receita " +  e.getMessage());

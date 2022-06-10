@@ -23,6 +23,7 @@ public class Splash extends javax.swing.JFrame {
                         Thread.sleep(45);
                         if(jProgressBar1.getValue() == 100){
                             tl.setVisible(true);
+                            dispose();
                         }
                     } catch (InterruptedException ex) {
                         Logger.getLogger(Splash.class.getName()).log(Level.SEVERE, null, ex);

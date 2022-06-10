@@ -15,6 +15,8 @@ public class Tela_Receitas_Usuarios extends javax.swing.JFrame {
     public Tela_Receitas_Usuarios() {
         initComponents();
         setBackground(new Color(0,0,0,0));
+        jScrollPane1.setBorder(null);
+        jScrollPane2.setBorder(null);
         
         String nomeUsuario = "";
         
@@ -137,7 +139,7 @@ public class Tela_Receitas_Usuarios extends javax.swing.JFrame {
         getContentPane().add(Botao_Fechar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 10, 70, 50));
 
         Campo_usuario.setEditable(false);
-        Campo_usuario.setBackground(new java.awt.Color(255, 227, 205));
+        Campo_usuario.setBackground(new java.awt.Color(255, 214, 182));
         Campo_usuario.setColumns(20);
         Campo_usuario.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         Campo_usuario.setLineWrap(true);

@@ -15,6 +15,8 @@ public class Tela_Receitas extends javax.swing.JFrame {
     public Tela_Receitas() {
         initComponents();
         setBackground(new Color(0,0,0,0));
+        jScrollPane1.setBorder(null);
+        jScrollPane2.setBorder(null);
         
         String nomeUsuario = "";
         
@@ -156,7 +158,7 @@ public class Tela_Receitas extends javax.swing.JFrame {
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 480, 50, 50));
 
         Campo_usuario.setEditable(false);
-        Campo_usuario.setBackground(new java.awt.Color(255, 227, 205));
+        Campo_usuario.setBackground(new java.awt.Color(255, 214, 182));
         Campo_usuario.setColumns(20);
         Campo_usuario.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         Campo_usuario.setLineWrap(true);
@@ -185,8 +187,8 @@ public class Tela_Receitas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BotaoAddReceitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoAddReceitaActionPerformed
-        Tela_AddReceitas ti = new Tela_AddReceitas();
-        ti.setVisible(true);
+        Tela_AddReceitas tar = new Tela_AddReceitas();
+        tar.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_BotaoAddReceitaActionPerformed
 

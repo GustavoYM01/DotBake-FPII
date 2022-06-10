@@ -6,59 +6,82 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import objetos.Usuario;
 
-
 public class Tela_AddReceitas extends javax.swing.JFrame {
-    
+
     MySQL connect = new MySQL(); // FAZ A INSTÂNCIA DO OBJ. MYSQL. DESSA FORMA, É POSSIVEL ACESSAR OS MÉTODOS DA CLASSE MYSQL.
     Usuario user = new Usuario();
-    
+
     public Tela_AddReceitas() {
         initComponents();
-        setBackground(new Color(0,0,0,0));
+        setBackground(new Color(0, 0, 0, 0));
+        jScrollPane1.setBorder(null);
     }
 
     private void insereReceita() {
-        
+
         String emailUsuario = user.getEmailUsuario();
-        
+
         this.connect.conectaBanco();
-        
+
         String titulo = CampoInsereTituloReceita.getText();
         String descricao = CampoInsereDetalhesReceita.getText();
-        
+
         try {
-            
+
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost/dot_bake", "root", "123456");
-            
+
             Statement stmt = con.createStatement();
-            
+
             String SQL = "SELECT nome_usuario FROM usuarios WHERE email = " + "'" + emailUsuario + "';";
-            
+
             ResultSet rs = stmt.executeQuery(SQL);
-            
-            if(rs.next()) {
+
+            if (rs.next()) {
                 String nome_usuario = rs.getString("nome_usuario");
-                this.connect.insertSQL("INSERT INTO receitas (titulo, descricao, respons_receita) VALUES (" 
-                    + "'" + titulo + "'," + "'" + descricao + "'," + "'" + nome_usuario + "'" + ")" + ";");
+                this.connect.insertSQL("INSERT INTO receitas (titulo, descricao, respons_receita) VALUES ("
+                        + "'" + titulo + "'," + "'" + descricao + "'," + "'" + nome_usuario + "'" + ")" + ";");
             }
+
+            Thread t = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        Tela_Popup_Receita_Add tpra = new Tela_Popup_Receita_Add();
+                        tpra.setVisible(true);
+                        
+                        Thread.sleep(2000);
+                        
+                        Tela_Receitas tr = new Tela_Receitas();
+                        tr.setVisible(true);
+                        
+                        tpra.dispose();
+                        dispose();
+                    } catch (InterruptedException ex) {
+                        Logger.getLogger(Splash.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+            });
+            t.start();
+
         } catch (Exception e) {
-            System.out.println("Erro ao cadastrar receita " +  e.getMessage());
+            System.out.println("Erro ao cadastrar receita " + e.getMessage());
             JOptionPane.showMessageDialog(null, "Erro ao cadastrar receita");
         } finally {
             this.connect.fechaBanco();
         }
     }
-    
+
     private boolean verificaCampos() {
         String c1 = CampoInsereTituloReceita.getText();
         String c2 = CampoInsereDetalhesReceita.getText();
         return c1.isEmpty() || c2.isEmpty();
     }
-    
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -214,15 +237,11 @@ public class Tela_AddReceitas extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void Botao_EnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botao_EnviarActionPerformed
-        if(verificaCampos()) {
+        if (verificaCampos()) {
             Tela_Erro te = new Tela_Erro();
             te.setVisible(true);
-        }
-        else {
+        } else {
             insereReceita();
-            Tela_Receitas tr = new Tela_Receitas();
-            tr.setVisible(true);
-            this.dispose();
         }
     }//GEN-LAST:event_Botao_EnviarActionPerformed
 

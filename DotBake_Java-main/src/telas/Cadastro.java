@@ -23,6 +23,8 @@ public class Cadastro extends javax.swing.JFrame {
         
         this.connect.conectaBanco();
         
+        novoUsuario.setEmailUsuario(CampoEmailCadastro.getText());
+        
         novoUsuario.setNome_Usuario(CampoNomeCadastro1.getText());
         novoUsuario.setEmail(CampoEmailCadastro.getText());
         novoUsuario.setSenha(CampoSenhaCadastro.getText());
@@ -201,9 +203,16 @@ public class Cadastro extends javax.swing.JFrame {
                 }
                 else {
                     cadastraUsuario(novoUsuario);
-                    Tela_Login tl = new Tela_Login();
-                    tl.setVisible(true);
-                    this.dispose();
+                    if(CampoEmailCadastro.getText().equals("admin@adm.com") && CampoSenhaCadastro.getText().equals("admin123")){
+                        Tela_Receitas tr = new Tela_Receitas();
+                        tr.setVisible(true);
+                        this.dispose();
+                    }
+                    else {
+                        Tela_Receitas_Usuarios tru = new Tela_Receitas_Usuarios();
+                        tru.setVisible(true);
+                        this.dispose();
+                    }
                 }
             }
     }//GEN-LAST:event_jButton1ActionPerformed
